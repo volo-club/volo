@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -5,25 +6,21 @@ import { cn } from "@/lib/utils";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSelector from "./LanguageSelector";
 import { Button } from "@/components/ui/button";
-const navLinks = [{
-  name: "Home",
-  path: "/"
-}, {
-  name: "Apartments",
-  path: "/apartments"
-}, {
-  name: "Amenities",
-  path: "/amenities"
-}, {
-  name: "Gallery",
-  path: "/gallery"
-}, {
-  name: "Contact",
-  path: "/contact"
-}];
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export default function Navbar() {
+  const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  
+  const navLinks = [
+    { name: t.nav.home, path: "/" },
+    { name: t.nav.apartments, path: "/apartments" },
+    { name: t.nav.amenities, path: "/amenities" },
+    { name: t.nav.gallery, path: "/gallery" },
+    { name: t.nav.contact, path: "/contact" }
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 20;
@@ -34,11 +31,11 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrolled]);
+  
   return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5")}>
       <nav className="container flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <LanguageSelector />
-          
         </div>
 
         {/* Desktop Navigation */}
@@ -53,7 +50,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-2">
           <ThemeToggle />
           <Button asChild className="btn-primary">
-            <Link to="/booking">Book Now</Link>
+            <Link to="/booking">{t.nav.bookNow}</Link>
           </Button>
         </div>
 
@@ -88,7 +85,7 @@ export default function Navbar() {
             
             <Button asChild className="w-full btn-primary mt-6">
               <Link to="/booking" onClick={() => setMobileMenuOpen(false)}>
-                Book Now
+                {t.nav.bookNow}
               </Link>
             </Button>
           </div>

@@ -17,8 +17,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function BookingForm() {
+  const { t } = useLanguage();
   const [startDate, setStartDate] = useState<Date>();
   const [endDate, setEndDate] = useState<Date>();
   const [adults, setAdults] = useState("2");
@@ -42,14 +44,14 @@ export default function BookingForm() {
       onSubmit={handleSubmit} 
       className="glass-card p-6 space-y-6 animate-fade-in [animation-delay:200ms]"
     >
-      <h3 className="text-2xl font-bold text-center mb-6">Book Your Stay</h3>
+      <h3 className="text-2xl font-bold text-center mb-6">{t.bookingForm.title}</h3>
       
       <div className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Check-in Date */}
           <div className="space-y-2">
             <label htmlFor="check-in" className="block text-sm font-medium">
-              Check-in Date
+              {t.bookingForm.checkIn}
             </label>
             <Popover>
               <PopoverTrigger asChild>
@@ -62,7 +64,7 @@ export default function BookingForm() {
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
-                  {startDate ? format(startDate, "PPP") : <span>Select date</span>}
+                  {startDate ? format(startDate, "PPP") : <span>{t.bookingForm.selectDate}</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="start">
@@ -81,7 +83,7 @@ export default function BookingForm() {
           {/* Check-out Date */}
           <div className="space-y-2">
             <label htmlFor="check-out" className="block text-sm font-medium">
-              Check-out Date
+              {t.bookingForm.checkOut}
             </label>
             <Popover>
               <PopoverTrigger asChild>
@@ -94,7 +96,7 @@ export default function BookingForm() {
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
-                  {endDate ? format(endDate, "PPP") : <span>Select date</span>}
+                  {endDate ? format(endDate, "PPP") : <span>{t.bookingForm.selectDate}</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="start">
@@ -115,7 +117,7 @@ export default function BookingForm() {
           {/* Adults */}
           <div className="space-y-2">
             <label htmlFor="adults" className="block text-sm font-medium">
-              Adults
+              {t.bookingForm.adults}
             </label>
             <Select value={adults} onValueChange={setAdults}>
               <SelectTrigger id="adults" className="w-full">
@@ -124,7 +126,7 @@ export default function BookingForm() {
               <SelectContent>
                 {[1, 2, 3, 4, 5, 6].map((num) => (
                   <SelectItem key={num} value={num.toString()}>
-                    {num} {num === 1 ? "Adult" : "Adults"}
+                    {num} {num === 1 ? t.bookingForm.adult : t.bookingForm.adults}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -134,7 +136,7 @@ export default function BookingForm() {
           {/* Children */}
           <div className="space-y-2">
             <label htmlFor="children" className="block text-sm font-medium">
-              Children
+              {t.bookingForm.children}
             </label>
             <Select value={children} onValueChange={setChildren}>
               <SelectTrigger id="children" className="w-full">
@@ -143,7 +145,7 @@ export default function BookingForm() {
               <SelectContent>
                 {[0, 1, 2, 3, 4].map((num) => (
                   <SelectItem key={num} value={num.toString()}>
-                    {num} {num === 1 ? "Child" : "Children"}
+                    {num} {num === 1 ? t.bookingForm.child : t.bookingForm.children}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -156,12 +158,12 @@ export default function BookingForm() {
         {submitted ? (
           <>
             <Check className="mr-2 h-4 w-4" />
-            Booking Confirmed!
+            {t.bookingForm.bookingConfirmed}
           </>
         ) : (
           <>
             <Users className="mr-2 h-4 w-4" />
-            Check Availability
+            {t.bookingForm.checkAvailability}
           </>
         )}
       </Button>

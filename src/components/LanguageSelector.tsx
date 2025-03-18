@@ -8,6 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Language = {
   code: string;
@@ -21,25 +22,25 @@ const languages: Language[] = [
 ];
 
 export default function LanguageSelector() {
-  const [currentLanguage, setCurrentLanguage] = useState("en");
+  const { language, setLanguage } = useLanguage();
+  const [mounted, setMounted] = useState(false);
 
+  // This effect is to ensure hydration doesn't cause issues
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language");
-    if (savedLanguage) {
-      setCurrentLanguage(savedLanguage);
-    }
+    setMounted(true);
   }, []);
 
   const handleLanguageChange = (value: string) => {
-    setCurrentLanguage(value);
-    localStorage.setItem("language", value);
-    // Here you would implement actual language change logic
-    // For a real implementation, you'd use i18n libraries like react-i18next
+    setLanguage(value);
   };
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className="flex items-center">
-      <Select value={currentLanguage} onValueChange={handleLanguageChange}>
+      <Select value={language} onValueChange={handleLanguageChange}>
         <SelectTrigger 
           className="w-[80px] h-10 border-none bg-transparent focus:ring-0" 
           aria-label="Select Language"

@@ -1,8 +1,10 @@
 
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   
   return (
@@ -12,8 +14,7 @@ export default function Footer() {
           <div className="animate-fade-in [animation-delay:100ms]">
             <h4 className="text-xl font-bold mb-4">MareSereno</h4>
             <p className="text-muted-foreground mb-4">
-              Luxurious beachfront apartments and hotel rooms with stunning sea views, 
-              offering the perfect blend of comfort and elegance for your dream vacation.
+              {t.footer.description}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -32,15 +33,15 @@ export default function Footer() {
           </div>
           
           <div className="animate-fade-in [animation-delay:200ms]">
-            <h4 className="text-xl font-bold mb-4">Quick Links</h4>
+            <h4 className="text-xl font-bold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               {[
-                { name: "Home", path: "/" },
-                { name: "Apartments", path: "/apartments" },
-                { name: "Amenities", path: "/amenities" },
-                { name: "Gallery", path: "/gallery" },
-                { name: "Contact", path: "/contact" },
-                { name: "Book Now", path: "/booking" },
+                { name: t.nav.home, path: "/" },
+                { name: t.nav.apartments, path: "/apartments" },
+                { name: t.nav.amenities, path: "/amenities" },
+                { name: t.nav.gallery, path: "/gallery" },
+                { name: t.nav.contact, path: "/contact" },
+                { name: t.nav.bookNow, path: "/booking" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link 
@@ -55,7 +56,7 @@ export default function Footer() {
           </div>
           
           <div className="animate-fade-in [animation-delay:300ms]">
-            <h4 className="text-xl font-bold mb-4">Contact</h4>
+            <h4 className="text-xl font-bold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-2 mt-0.5 text-primary" />
@@ -77,14 +78,14 @@ export default function Footer() {
           </div>
           
           <div className="animate-fade-in [animation-delay:400ms]">
-            <h4 className="text-xl font-bold mb-4">Newsletter</h4>
+            <h4 className="text-xl font-bold mb-4">{t.footer.newsletter}</h4>
             <p className="text-muted-foreground mb-4">
-              Subscribe to our newsletter for special deals and updates.
+              {t.footer.newsletterDesc}
             </p>
             <form className="flex flex-col space-y-2">
               <input 
                 type="email" 
-                placeholder="Your email address" 
+                placeholder={t.footer.yourEmail} 
                 className="rounded-md px-4 py-2 bg-muted text-foreground"
                 required 
               />
@@ -92,14 +93,14 @@ export default function Footer() {
                 type="submit" 
                 className="btn-primary mt-2"
               >
-                Subscribe
+                {t.footer.subscribe}
               </button>
             </form>
           </div>
         </div>
         
         <div className="border-t border-border pt-8 mt-8 text-center text-muted-foreground">
-          <p>&copy; {currentYear} MareSereno. All rights reserved.</p>
+          <p>&copy; {currentYear} MareSereno. {t.footer.allRights}</p>
         </div>
       </div>
     </footer>

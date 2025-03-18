@@ -1,7 +1,7 @@
-
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Testimonial {
   id: number;
@@ -40,6 +40,7 @@ const testimonials: Testimonial[] = [
 ];
 
 export default function TestimonialsSection() {
+  const { t } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   
@@ -65,7 +66,6 @@ export default function TestimonialsSection() {
     }, 500);
   };
   
-  // Auto rotate testimonials
   useEffect(() => {
     const interval = setInterval(nextTestimonial, 8000);
     return () => clearInterval(interval);
@@ -76,15 +76,14 @@ export default function TestimonialsSection() {
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            What Our Guests Say
+            {t.testimonials.title}
           </h2>
           <p className="text-muted-foreground">
-            Discover why our guests keep coming back to MareSereno for their seaside getaways.
+            {t.testimonials.description}
           </p>
         </div>
         
         <div className="relative max-w-4xl mx-auto">
-          {/* Testimonial Cards */}
           <div className="relative h-[400px] md:h-[300px]">
             {testimonials.map((testimonial, index) => (
               <div
@@ -129,7 +128,6 @@ export default function TestimonialsSection() {
             ))}
           </div>
           
-          {/* Navigation Buttons */}
           <div className="flex justify-between mt-8">
             <button
               onClick={prevTestimonial}
@@ -140,7 +138,6 @@ export default function TestimonialsSection() {
               <span className="sr-only">Previous testimonial</span>
             </button>
             
-            {/* Dots */}
             <div className="flex space-x-2">
               {testimonials.map((_, index) => (
                 <button

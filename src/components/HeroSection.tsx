@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   const [scrollY, setScrollY] = useState(0);
   
   useEffect(() => {
@@ -43,21 +45,20 @@ export default function HeroSection() {
       >
         <div className="max-w-3xl animate-fade-in">
           <span className="inline-block text-white/90 text-lg mb-4 tracking-wide border-b border-white/30 pb-2">
-            BEACHFRONT LUXURY ACCOMMODATION
+            {t.hero.subtitle}
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Experience Seaside Tranquility
+            {t.hero.title}
           </h1>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Discover our exclusive collection of luxury beachfront apartments and hotel rooms, 
-            offering unparalleled comfort and breathtaking sea views.
+            {t.hero.description}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="min-w-[200px] btn-primary">
-              <Link to="/booking">Book Your Stay</Link>
+              <Link to="/booking">{t.hero.bookStay}</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="min-w-[200px] text-white border-white/30 hover:bg-white/10">
-              <Link to="/apartments">Explore Apartments</Link>
+              <Link to="/apartments">{t.hero.exploreApartments}</Link>
             </Button>
           </div>
         </div>
@@ -69,7 +70,7 @@ export default function HeroSection() {
           href="#welcome" 
           className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity"
         >
-          <span className="text-sm mb-2">Scroll Down</span>
+          <span className="text-sm mb-2">{t.hero.scrollDown}</span>
           <ChevronDown className="h-6 w-6" />
         </a>
       </div>
