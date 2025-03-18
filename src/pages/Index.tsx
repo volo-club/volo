@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,7 +7,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ApartmentCard, { ApartmentProps } from "@/components/ApartmentCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Wifi, Utensils, Waves, SwimmingPool, MapPin, Coffee } from "lucide-react";
+import { ArrowRight, Wifi, Utensils, Waves, LifeBuoy, MapPin, Coffee } from "lucide-react";
 
 // Sample apartments data
 const featuredApartments: ApartmentProps[] = [
@@ -55,7 +54,7 @@ const features = [
     description: "Direct access to pristine beaches with crystal clear waters."
   },
   {
-    icon: <SwimmingPool className="h-8 w-8 text-primary" />,
+    icon: <LifeBuoy className="h-8 w-8 text-primary" />,
     title: "Swimming Pools",
     description: "Relax by our infinity pools with stunning sea views."
   },
