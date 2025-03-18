@@ -110,6 +110,11 @@ export default {
 					'0%': { transform: 'translateX(0) translateZ(0) scaleY(1)' },
 					'50%': { transform: 'translateX(-25%) translateZ(0) scaleY(0.8)' },
 					'100%': { transform: 'translateX(-50%) translateZ(0) scaleY(1)' }
+				},
+				'button-glow': {
+					'0%': { boxShadow: '0 0 5px rgba(30, 136, 229, 0.5)' },
+					'50%': { boxShadow: '0 0 20px rgba(30, 136, 229, 0.8)' },
+					'100%': { boxShadow: '0 0 5px rgba(30, 136, 229, 0.5)' }
 				}
 			},
 			animation: {
@@ -122,7 +127,8 @@ export default {
 				'slide-down': 'slide-down 0.6s ease-out',
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
-				'wave': 'wave 12s -2s linear infinite'
+				'wave': 'wave 12s -2s linear infinite',
+				'button-glow': 'button-glow 3s ease-in-out infinite'
 			}
 		}
 	},

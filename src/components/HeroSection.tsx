@@ -54,10 +54,10 @@ export default function HeroSection() {
             {t.hero.description}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="min-w-[200px] btn-primary">
+            <Button asChild size="lg" variant="heroSolid" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
               <Link to="/booking">{t.hero.bookStay}</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="min-w-[200px] text-white border-white/30 hover:bg-white/10">
+            <Button asChild variant="hero" size="lg" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
               <Link to="/apartments">{t.hero.exploreApartments}</Link>
             </Button>
           </div>
