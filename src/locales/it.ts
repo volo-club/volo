@@ -68,7 +68,6 @@ export const it = {
       noMatch: "Nessun appartamento corrisponde ai tuoi filtri",
       adjustFilters: "Prova a modificare i criteri di filtro per vedere più opzioni.",
       guest: "Ospite",
-      guests: "Ospiti",
       viewDetails: "Visualizza Dettagli",
       features: "caratteristiche",
       more: "altro"

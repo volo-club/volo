@@ -68,7 +68,6 @@ export const en = {
       noMatch: "No apartments match your filters",
       adjustFilters: "Try adjusting your filter criteria to see more options.",
       guest: "Guest",
-      guests: "Guests",
       viewDetails: "View Details",
       features: "features",
       more: "more"
