@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "./ThemeToggle";
+import LanguageSelector from "./LanguageSelector";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -40,12 +41,15 @@ export default function Navbar() {
       )}
     >
       <nav className="container flex justify-between items-center">
-        <Link 
-          to="/" 
-          className="font-playfair text-2xl font-bold text-primary"
-        >
-          MareSereno
-        </Link>
+        <div className="flex items-center space-x-2">
+          <LanguageSelector />
+          <Link 
+            to="/" 
+            className="font-playfair text-2xl font-bold text-primary"
+          >
+            MareSereno
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-8">
@@ -99,7 +103,8 @@ export default function Navbar() {
         )}>
           <div className="flex flex-col h-full justify-between">
             <div>
-              <div className="flex justify-end mb-8">
+              <div className="flex justify-between mb-8">
+                <LanguageSelector />
                 <Button 
                   variant="ghost" 
                   size="icon" 
