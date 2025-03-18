@@ -12,6 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { cn } from "@/lib/utils";
 
 // Sample apartments data
 const allApartments: ApartmentProps[] = [
@@ -84,6 +86,7 @@ const allApartments: ApartmentProps[] = [
 ];
 
 export default function Apartments() {
+  const { t } = useLanguage();
   const [filteredApartments, setFilteredApartments] = useState<ApartmentProps[]>(allApartments);
   const [capacityFilter, setCapacityFilter] = useState<string>("all");
   const [locationFilter, setLocationFilter] = useState<string>("all");
@@ -128,10 +131,10 @@ export default function Apartments() {
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                Our Apartments & Rooms
+                {t.apartments.title}
               </h1>
               <p className="text-muted-foreground text-lg mb-6">
-                Discover our selection of premium accommodations, ranging from cozy studios to luxurious penthouses.
+                {t.apartments.subtitle}
               </p>
             </div>
           </div>
@@ -150,18 +153,18 @@ export default function Apartments() {
               {/* Capacity Filter */}
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Guests
+                  {t.apartments.filters.guests}
                 </label>
                 <Select value={capacityFilter} onValueChange={setCapacityFilter}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select capacity" />
+                    <SelectValue placeholder={t.apartments.filters.guests} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">Any number of guests</SelectItem>
-                    <SelectItem value="1">1+ guests</SelectItem>
-                    <SelectItem value="2">2+ guests</SelectItem>
-                    <SelectItem value="3">3+ guests</SelectItem>
-                    <SelectItem value="4">4+ guests</SelectItem>
+                    <SelectItem value="all">{t.apartments.filters.anyGuests}</SelectItem>
+                    <SelectItem value="1">{t.apartments.filters.onePlus}</SelectItem>
+                    <SelectItem value="2">{t.apartments.filters.twoPlus}</SelectItem>
+                    <SelectItem value="3">{t.apartments.filters.threePlus}</SelectItem>
+                    <SelectItem value="4">{t.apartments.filters.fourPlus}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -169,14 +172,14 @@ export default function Apartments() {
               {/* Location Filter */}
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Location
+                  {t.apartments.filters.location}
                 </label>
                 <Select value={locationFilter} onValueChange={setLocationFilter}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select location" />
+                    <SelectValue placeholder={t.apartments.filters.location} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">All locations</SelectItem>
+                    <SelectItem value="all">{t.apartments.filters.allLocations}</SelectItem>
                     {locations.filter(loc => loc !== "all").map(location => (
                       <SelectItem key={location} value={location}>{location}</SelectItem>
                     ))}
@@ -187,7 +190,7 @@ export default function Apartments() {
               {/* Price Range Filter */}
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Price Range: ${priceRange[0]} - ${priceRange[1]}
+                  {t.apartments.filters.priceRange}: ${priceRange[0]} - ${priceRange[1]}
                 </label>
                 <Slider
                   defaultValue={[100, 350]}
@@ -203,7 +206,7 @@ export default function Apartments() {
             
             <div className="flex justify-between items-center mt-6 animate-fade-in [animation-delay:200ms]">
               <p className="text-muted-foreground">
-                Showing {filteredApartments.length} of {allApartments.length} accommodations
+                {t.apartments.filters.showing} {filteredApartments.length} {t.apartments.filters.of} {allApartments.length} {t.apartments.filters.accommodations}
               </p>
               <Button 
                 variant="outline" 
@@ -213,7 +216,7 @@ export default function Apartments() {
                   setPriceRange([100, 350]);
                 }}
               >
-                Reset Filters
+                {t.apartments.filters.resetFilters}
               </Button>
             </div>
           </div>
@@ -232,8 +235,8 @@ export default function Apartments() {
               </div>
             ) : (
               <div className="text-center py-12 animate-fade-in">
-                <h3 className="text-xl font-semibold mb-2">No apartments match your filters</h3>
-                <p className="text-muted-foreground mb-6">Try adjusting your filter criteria to see more options.</p>
+                <h3 className="text-xl font-semibold mb-2">{t.apartments.filters.noMatch}</h3>
+                <p className="text-muted-foreground mb-6">{t.apartments.filters.adjustFilters}</p>
                 <Button 
                   variant="outline" 
                   onClick={() => {
@@ -242,7 +245,7 @@ export default function Apartments() {
                     setPriceRange([100, 350]);
                   }}
                 >
-                  Reset Filters
+                  {t.apartments.filters.resetFilters}
                 </Button>
               </div>
             )}

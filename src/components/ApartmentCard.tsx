@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Users, Maximize, MapPin, Bath, Coffee, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export interface ApartmentProps {
   id: string;
@@ -18,6 +19,7 @@ export interface ApartmentProps {
 }
 
 export default function ApartmentCard({ apartment }: { apartment: ApartmentProps }) {
+  const { t } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
   
   return (
@@ -45,7 +47,8 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
             <div className="flex items-center space-x-3 text-white">
               <div className="flex items-center">
                 <Users className="h-4 w-4 mr-1" />
-                <span>{apartment.capacity} Guests</span>
+                <span>{apartment.capacity} {apartment.capacity === 1 ? 
+                  t.apartments.filters.guest : t.apartments.filters.guests}</span>
               </div>
               <div className="flex items-center">
                 <Maximize className="h-4 w-4 mr-1" />
@@ -73,7 +76,7 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
           ))}
           {apartment.features.length > 3 && (
             <div className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">
-              +{apartment.features.length - 3} more
+              +{apartment.features.length - 3} {t.apartments.filters.more}
             </div>
           )}
         </div>
@@ -81,10 +84,10 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
         <div className="flex items-end justify-between pt-2">
           <div>
             <span className="text-xl font-bold">${apartment.price}</span>
-            <span className="text-muted-foreground text-sm"> / night</span>
+            <span className="text-muted-foreground text-sm"> / {t.booking.summary.night}</span>
           </div>
           <Button asChild className="btn-primary">
-            <Link to={`/apartments/${apartment.id}`}>View Details</Link>
+            <Link to={`/apartments/${apartment.id}`}>{t.apartments.filters.viewDetails}</Link>
           </Button>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Sample gallery images
 const galleryImages = [
@@ -82,6 +83,7 @@ const galleryImages = [
 ];
 
 export default function Gallery() {
+  const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [filteredImages, setFilteredImages] = useState(galleryImages);
   const [activeFilter, setActiveFilter] = useState("all");
@@ -146,10 +148,10 @@ export default function Gallery() {
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                Photo Gallery
+                {t.gallery.title}
               </h1>
               <p className="text-muted-foreground text-lg mb-6">
-                Explore our seaside paradise through captivating imagery.
+                {t.gallery.subtitle}
               </p>
             </div>
           </div>
@@ -176,7 +178,13 @@ export default function Gallery() {
                       : "bg-card hover:bg-muted"
                   )}
                 >
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                  {category === "all" 
+                    ? t.gallery.filters.all 
+                    : category === "exterior" 
+                      ? t.gallery.filters.exterior 
+                      : category === "rooms" 
+                        ? t.gallery.filters.rooms 
+                        : t.gallery.filters.amenities}
                 </button>
               ))}
             </div>
