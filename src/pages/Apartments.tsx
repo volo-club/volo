@@ -13,9 +13,8 @@ import {
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { cn } from "@/lib/utils";
 
-// Sample apartments data
+// Sample apartments data (will use translations from context)
 const allApartments: ApartmentProps[] = [
   {
     id: "1",

@@ -67,7 +67,6 @@ export const en = {
       resetFilters: "Reset Filters",
       noMatch: "No apartments match your filters",
       adjustFilters: "Try adjusting your filter criteria to see more options.",
-      guest: "Guest",
       viewDetails: "View Details",
       features: "features",
       more: "more"
@@ -171,6 +170,82 @@ export const en = {
       emailSent: "Your reservation has been successfully confirmed. A confirmation email has been sent to",
       bookingReference: "Booking Reference",
       returnToHome: "Return to Homepage"
+    }
+  },
+  // Contact page translations
+  contact: {
+    title: "Contact Us",
+    subtitle: "We're here to help make your stay unforgettable. Reach out with any questions or special requests.",
+    getInTouch: "Get In Touch",
+    address: "Address",
+    phone: "Phone",
+    email: "Email",
+    receptionHours: "Reception Hours",
+    checkInTime: "Check-in: After 3:00 PM",
+    checkOutTime: "Check-out: Before 11:00 AM",
+    sendMessage: "Send Us a Message",
+    fullName: "Full Name",
+    phoneNumber: "Phone Number",
+    subject: "Subject",
+    message: "Message",
+    howCanWeHelp: "How can we help you?",
+    send: "Send Message",
+    messageSent: "Message Sent!",
+    thankYou: "Thank you for reaching out. We'll respond to your message as soon as possible.",
+    faq: "Frequently Asked Questions",
+    faqSubtitle: "Find quick answers to commonly asked questions about our accommodations and services.",
+    questions: {
+      checkInOut: {
+        question: "What are your check-in and check-out times?",
+        answer: "Check-in is from 3:00 PM onwards, and check-out is until 11:00 AM. Early check-in or late check-out may be arranged based on availability."
+      },
+      parking: {
+        question: "Is parking available at the property?",
+        answer: "Yes, we offer complimentary parking for all guests. Valet parking service is also available for an additional fee."
+      },
+      pets: {
+        question: "Are pets allowed in the apartments?",
+        answer: "We welcome pets in designated pet-friendly apartments. Please inform us in advance if you plan to bring a pet, as additional charges may apply."
+      },
+      breakfast: {
+        question: "Is breakfast included in the room rate?",
+        answer: "Breakfast is included in select room packages. You can check the inclusion during the booking process or add it to your reservation at any time."
+      },
+      transfers: {
+        question: "Do you offer airport transfers?",
+        answer: "Yes, we offer airport transfers for an additional fee. Please contact our concierge at least 48 hours before your arrival to arrange transportation."
+      },
+      amenities: {
+        question: "What amenities are available at the property?",
+        answer: "Our property features swimming pools, a spa, restaurants, a beach bar, fitness center, and direct beach access. All apartments include Wi-Fi, air conditioning, and modern appliances."
+      }
+    }
+  },
+  // Apartment descriptions
+  apartmentDescriptions: {
+    "1": {
+      name: "Deluxe Sea View Suite",
+      description: "Luxurious suite with panoramic sea views, modern amenities, and a private balcony."
+    },
+    "2": {
+      name: "Premium Family Apartment",
+      description: "Spacious apartment ideal for families, with full kitchen and stunning coastal views."
+    },
+    "3": {
+      name: "Executive Beach Studio",
+      description: "Elegant studio with direct beach access, modern design, and premium finishes."
+    },
+    "4": {
+      name: "Luxury Penthouse Suite",
+      description: "Exclusive top-floor suite with expansive terrace and panoramic sea views."
+    },
+    "5": {
+      name: "Classic Double Room",
+      description: "Comfortable hotel room with modern amenities and partial sea views."
+    },
+    "6": {
+      name: "Garden View Apartment",
+      description: "Peaceful apartment surrounded by lush gardens, just a short walk from the beach."
     }
   }
 };

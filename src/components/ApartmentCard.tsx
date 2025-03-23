@@ -19,8 +19,17 @@ export interface ApartmentProps {
 }
 
 export default function ApartmentCard({ apartment }: { apartment: ApartmentProps }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
+  
+  // Use translated name and description if available
+  const translatedName = language !== 'en' && t.apartmentDescriptions[apartment.id]?.name 
+    ? t.apartmentDescriptions[apartment.id].name 
+    : apartment.name;
+    
+  const translatedDescription = language !== 'en' && t.apartmentDescriptions[apartment.id]?.description 
+    ? t.apartmentDescriptions[apartment.id].description 
+    : apartment.description;
   
   return (
     <div 
@@ -31,7 +40,7 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
       <div className="relative overflow-hidden h-64">
         <img 
           src={apartment.image} 
-          alt={apartment.name}
+          alt={translatedName}
           className={cn(
             "w-full h-full object-cover transition-transform duration-700",
             isHovered ? "scale-110" : "scale-100"
@@ -39,7 +48,7 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 flex items-end p-6">
           <div>
-            <h3 className="text-white text-xl font-bold mb-1">{apartment.name}</h3>
+            <h3 className="text-white text-xl font-bold mb-1">{translatedName}</h3>
             <div className="flex items-center text-white/80 text-sm mb-2">
               <MapPin className="h-4 w-4 mr-1" />
               <span>{apartment.location}</span>
@@ -60,7 +69,7 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
       </div>
       
       <div className="p-6 space-y-4">
-        <p className="text-muted-foreground line-clamp-2">{apartment.description}</p>
+        <p className="text-muted-foreground line-clamp-2">{translatedDescription}</p>
         
         <div className="flex flex-wrap gap-2">
           {apartment.features.slice(0, 3).map((feature, index) => (

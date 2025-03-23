@@ -67,7 +67,6 @@ export const it = {
       resetFilters: "Reimposta Filtri",
       noMatch: "Nessun appartamento corrisponde ai tuoi filtri",
       adjustFilters: "Prova a modificare i criteri di filtro per vedere più opzioni.",
-      guest: "Ospite",
       viewDetails: "Visualizza Dettagli",
       features: "caratteristiche",
       more: "altro"
@@ -171,6 +170,82 @@ export const it = {
       emailSent: "La tua prenotazione è stata confermata con successo. Una email di conferma è stata inviata a",
       bookingReference: "Riferimento Prenotazione",
       returnToHome: "Torna alla Homepage"
+    }
+  },
+  // Contact page translations
+  contact: {
+    title: "Contattaci",
+    subtitle: "Siamo qui per aiutarti a rendere il tuo soggiorno indimenticabile. Contattaci per qualsiasi domanda o richiesta speciale.",
+    getInTouch: "Mettiti in Contatto",
+    address: "Indirizzo",
+    phone: "Telefono",
+    email: "Email",
+    receptionHours: "Orari Reception",
+    checkInTime: "Check-in: Dopo le 15:00",
+    checkOutTime: "Check-out: Prima delle 11:00",
+    sendMessage: "Inviaci un Messaggio",
+    fullName: "Nome Completo",
+    phoneNumber: "Numero di Telefono",
+    subject: "Oggetto",
+    message: "Messaggio",
+    howCanWeHelp: "Come possiamo aiutarti?",
+    send: "Invia",
+    messageSent: "Messaggio Inviato!",
+    thankYou: "Grazie per averci contattato. Risponderemo al tuo messaggio il prima possibile.",
+    faq: "Domande Frequenti",
+    faqSubtitle: "Trova risposte rapide alle domande più comuni sui nostri alloggi e servizi.",
+    questions: {
+      checkInOut: {
+        question: "Quali sono gli orari di check-in e check-out?",
+        answer: "Il check-in è dalle 15:00 in poi, e il check-out è fino alle 11:00. Il check-in anticipato o il check-out posticipato possono essere organizzati in base alla disponibilità."
+      },
+      parking: {
+        question: "È disponibile il parcheggio presso la struttura?",
+        answer: "Sì, offriamo parcheggio gratuito per tutti gli ospiti. Il servizio di parcheggio con valletto è disponibile anche a un costo aggiuntivo."
+      },
+      pets: {
+        question: "Gli animali domestici sono ammessi negli appartamenti?",
+        answer: "Accogliamo gli animali domestici in appartamenti designati pet-friendly. Si prega di informarci in anticipo se si prevede di portare un animale domestico, poiché potrebbero essere applicati costi aggiuntivi."
+      },
+      breakfast: {
+        question: "La colazione è inclusa nella tariffa della camera?",
+        answer: "La colazione è inclusa in pacchetti camera selezionati. Puoi verificare l'inclusione durante il processo di prenotazione o aggiungerla alla tua prenotazione in qualsiasi momento."
+      },
+      transfers: {
+        question: "Offrite trasferimenti aeroportuali?",
+        answer: "Sì, offriamo trasferimenti aeroportuali a un costo aggiuntivo. Si prega di contattare la nostra concierge almeno 48 ore prima del tuo arrivo per organizzare il trasporto."
+      },
+      amenities: {
+        question: "Quali servizi sono disponibili nella struttura?",
+        answer: "La nostra struttura dispone di piscine, una spa, ristoranti, un bar sulla spiaggia, un centro fitness e accesso diretto alla spiaggia. Tutti gli appartamenti includono Wi-Fi, aria condizionata e elettrodomestici moderni."
+      }
+    }
+  },
+  // Apartment descriptions
+  apartmentDescriptions: {
+    "1": {
+      name: "Suite Vista Mare Deluxe",
+      description: "Suite lussuosa con vista panoramica sul mare, comfort moderni e balcone privato."
+    },
+    "2": {
+      name: "Appartamento Premium per Famiglie",
+      description: "Appartamento spazioso ideale per famiglie, con cucina completa e splendide viste costiere."
+    },
+    "3": {
+      name: "Studio Esecutivo sulla Spiaggia",
+      description: "Elegante studio con accesso diretto alla spiaggia, design moderno e finiture di pregio."
+    },
+    "4": {
+      name: "Suite Attico di Lusso",
+      description: "Esclusiva suite all'ultimo piano con ampia terrazza e vista panoramica sul mare."
+    },
+    "5": {
+      name: "Camera Doppia Classica",
+      description: "Confortevole camera d'albergo con comfort moderni e vista parziale sul mare."
+    },
+    "6": {
+      name: "Appartamento Vista Giardino",
+      description: "Appartamento tranquillo circondato da rigogliosi giardini, a breve distanza dalla spiaggia."
     }
   }
 };
