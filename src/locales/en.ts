@@ -1,4 +1,3 @@
-
 export const en = {
   nav: {
     home: "Home",
@@ -47,7 +46,63 @@ export const en = {
     description: "We couldn't find the page you were looking for. Perhaps you took a wrong turn in paradise?",
     returnHome: "Return Home"
   },
-  // Added apartment page translations
+  home: {
+    welcome: {
+      subtitle: "Welcome to MareSereno",
+      title: "Luxury Seaside Accommodations",
+      description1: "Nestled on the pristine Mediterranean coastline, MareSereno offers an exquisite collection of luxury apartments and hotel rooms. Our beachfront accommodations combine elegant design with modern comfort, creating the perfect setting for an unforgettable seaside getaway.",
+      description2: "Whether you're seeking a romantic escape, a family vacation, or a peaceful retreat, our diverse range of accommodations caters to every preference and need. Each space is thoughtfully designed to provide panoramic sea views and direct beach access.",
+      learnMore: "Learn More"
+    },
+    booking: {
+      subtitle: "Book Your Stay",
+      title: "Reserve Your Perfect Getaway",
+      description: "Take the first step towards your dream vacation by checking availability and securing your preferred dates. Our simple booking process ensures a seamless experience from reservation to arrival.",
+      benefits: ["Instant confirmation", "Best rate guarantee", "Flexible cancellation options", "Secure payment"]
+    },
+    featuredApartments: {
+      subtitle: "Our Accommodations",
+      title: "Featured Apartments",
+      description: "Discover our most popular accommodation options, each offering a perfect blend of comfort, style, and breathtaking sea views.",
+      viewAll: "View All Apartments"
+    },
+    amenities: {
+      subtitle: "Hotel Amenities",
+      title: "Experience The Best",
+      description: "Enjoy our premium facilities and services designed to make your stay exceptional.",
+      features: {
+        beachfront: {
+          title: "Beachfront Location",
+          description: "Direct access to pristine beaches with crystal clear waters."
+        },
+        pools: {
+          title: "Swimming Pools",
+          description: "Relax by our infinity pools with stunning sea views."
+        },
+        restaurant: {
+          title: "Gourmet Restaurant",
+          description: "Enjoy exquisite local and international cuisine."
+        },
+        wifi: {
+          title: "High-Speed Wi-Fi",
+          description: "Stay connected with complimentary high-speed internet."
+        },
+        bar: {
+          title: "Beach Bar & Café",
+          description: "Refreshing drinks and snacks served right on the beach."
+        },
+        location: {
+          title: "Prime Location",
+          description: "Close to local attractions, shops, and restaurants."
+        }
+      }
+    },
+    cta: {
+      title: "Ready for Your Dream Vacation?",
+      description: "Book your stay today and experience the perfect blend of luxury, comfort, and stunning sea views.",
+      bookNow: "Book Now"
+    }
+  },
   apartments: {
     title: "Our Apartments & Rooms",
     subtitle: "Discover our selection of premium accommodations, ranging from cozy studios to luxurious penthouses.",
@@ -72,7 +127,6 @@ export const en = {
       more: "more"
     }
   },
-  // Gallery page translations
   gallery: {
     title: "Photo Gallery",
     subtitle: "Explore our seaside paradise through captivating imagery.",
@@ -83,7 +137,6 @@ export const en = {
       amenities: "Amenities"
     }
   },
-  // Booking page translations
   booking: {
     title: "Book Your Stay",
     subtitle: "Complete your reservation in a few simple steps.",
@@ -172,7 +225,6 @@ export const en = {
       returnToHome: "Return to Homepage"
     }
   },
-  // Contact page translations
   contact: {
     title: "Contact Us",
     subtitle: "We're here to help make your stay unforgettable. Reach out with any questions or special requests.",
@@ -221,7 +273,6 @@ export const en = {
       }
     }
   },
-  // Apartment descriptions
   apartmentDescriptions: {
     "1": {
       name: "Deluxe Sea View Suite",
@@ -246,6 +297,101 @@ export const en = {
     "6": {
       name: "Garden View Apartment",
       description: "Peaceful apartment surrounded by lush gardens, just a short walk from the beach."
+    }
+  },
+  amenitiesPage: {
+    title: "Our Amenities",
+    subtitle: "Discover the luxury amenities and services that make your stay unforgettable.",
+    description: "At MareSereno, we are dedicated to providing a comprehensive and luxurious stay experience. From our beachfront services to wellness facilities, every detail has been curated to ensure maximum comfort and pleasure.",
+    categories: {
+      wellness: {
+        title: "Wellness & Relaxation",
+        description: "Treat yourself with our range of wellness services designed to rejuvenate body and mind.",
+        items: [
+          {
+            title: "Luxury Spa",
+            description: "Our spa offers a full range of treatments, from traditional therapies to the most modern beauty treatments."
+          },
+          {
+            title: "Fitness Center",
+            description: "Maintain your fitness routine with our state-of-the-art gym featuring panoramic sea views."
+          },
+          {
+            title: "Infinity Pool",
+            description: "Immerse yourself in our infinity pool while admiring the endless horizon of the sea."
+          },
+          {
+            title: "Beach Yoga",
+            description: "Join our morning yoga sessions on the beach for a revitalizing awakening."
+          }
+        ]
+      },
+      dining: {
+        title: "Dining",
+        description: "Discover the best of local and international cuisine at our restaurants and bars.",
+        items: [
+          {
+            title: "Gourmet Restaurant",
+            description: "Savor fine dishes prepared by our chefs with fresh local ingredients."
+          },
+          {
+            title: "Beach Bar",
+            description: "Enjoy refreshing cocktails and light snacks with your feet in the sand."
+          },
+          {
+            title: "Lounge Bar",
+            description: "Relax with a selection of fine wines and spirits in an elegant atmosphere."
+          },
+          {
+            title: "Room Service",
+            description: "Enjoy gourmet meals in the privacy of your apartment, available 24 hours a day."
+          }
+        ]
+      },
+      services: {
+        title: "Extra Services",
+        description: "Take advantage of our additional services for a hassle-free stay.",
+        items: [
+          {
+            title: "24/7 Concierge",
+            description: "Our concierge team is available at any time to assist you with any request."
+          },
+          {
+            title: "Airport Transfers",
+            description: "Travel comfortably to and from the airport with our private transfer service."
+          },
+          {
+            title: "Car Rental",
+            description: "Explore the area with our fleet of premium vehicles available for rent."
+          },
+          {
+            title: "Guided Excursions",
+            description: "Discover local attractions with our personalized expert-guided tours."
+          }
+        ]
+      },
+      entertainment: {
+        title: "Entertainment",
+        description: "Enjoy a variety of recreational activities designed for all tastes.",
+        items: [
+          {
+            title: "Water Sports",
+            description: "Try a wide range of water sports, from paddleboarding to jet skiing."
+          },
+          {
+            title: "Kids Play Area",
+            description: "Little ones can have fun in our safe and supervised play area."
+          },
+          {
+            title: "Themed Evenings",
+            description: "Join our weekly themed evenings with live music and entertainment."
+          },
+          {
+            title: "Library & Game Room",
+            description: "Relax with a good book or enjoy board games in our common room."
+          }
+        ]
+      }
     }
   }
 };

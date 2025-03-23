@@ -8,6 +8,7 @@ import ApartmentCard, { ApartmentProps } from "@/components/ApartmentCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Wifi, Utensils, Waves, LifeBuoy, MapPin, Coffee } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Sample apartments data
 const featuredApartments: ApartmentProps[] = [
@@ -46,45 +47,47 @@ const featuredApartments: ApartmentProps[] = [
   }
 ];
 
-// Feature items
-const features = [
-  {
-    icon: <Waves className="h-8 w-8 text-primary" />,
-    title: "Beachfront Location",
-    description: "Direct access to pristine beaches with crystal clear waters."
-  },
-  {
-    icon: <LifeBuoy className="h-8 w-8 text-primary" />,
-    title: "Swimming Pools",
-    description: "Relax by our infinity pools with stunning sea views."
-  },
-  {
-    icon: <Utensils className="h-8 w-8 text-primary" />,
-    title: "Gourmet Restaurant",
-    description: "Enjoy exquisite local and international cuisine."
-  },
-  {
-    icon: <Wifi className="h-8 w-8 text-primary" />,
-    title: "High-Speed Wi-Fi",
-    description: "Stay connected with complimentary high-speed internet."
-  },
-  {
-    icon: <Coffee className="h-8 w-8 text-primary" />,
-    title: "Beach Bar & Café",
-    description: "Refreshing drinks and snacks served right on the beach."
-  },
-  {
-    icon: <MapPin className="h-8 w-8 text-primary" />,
-    title: "Prime Location",
-    description: "Close to local attractions, shops, and restaurants."
-  }
-];
-
 export default function Index() {
+  const { t } = useLanguage();
+  
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
+  
+  // Feature items
+  const features = [
+    {
+      icon: <Waves className="h-8 w-8 text-primary" />,
+      title: t.home.amenities.features.beachfront.title,
+      description: t.home.amenities.features.beachfront.description
+    },
+    {
+      icon: <LifeBuoy className="h-8 w-8 text-primary" />,
+      title: t.home.amenities.features.pools.title,
+      description: t.home.amenities.features.pools.description
+    },
+    {
+      icon: <Utensils className="h-8 w-8 text-primary" />,
+      title: t.home.amenities.features.restaurant.title,
+      description: t.home.amenities.features.restaurant.description
+    },
+    {
+      icon: <Wifi className="h-8 w-8 text-primary" />,
+      title: t.home.amenities.features.wifi.title,
+      description: t.home.amenities.features.wifi.description
+    },
+    {
+      icon: <Coffee className="h-8 w-8 text-primary" />,
+      title: t.home.amenities.features.bar.title,
+      description: t.home.amenities.features.bar.description
+    },
+    {
+      icon: <MapPin className="h-8 w-8 text-primary" />,
+      title: t.home.amenities.features.location.title,
+      description: t.home.amenities.features.location.description
+    }
+  ];
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -100,24 +103,20 @@ export default function Index() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in [animation-delay:100ms]">
                 <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                  Welcome to MareSereno
+                  {t.home.welcome.subtitle}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">
-                  Luxury Seaside Accommodations
+                  {t.home.welcome.title}
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Nestled on the pristine Mediterranean coastline, MareSereno offers an exquisite collection 
-                  of luxury apartments and hotel rooms. Our beachfront accommodations combine elegant 
-                  design with modern comfort, creating the perfect setting for an unforgettable seaside getaway.
+                  {t.home.welcome.description1}
                 </p>
                 <p className="text-muted-foreground mb-8">
-                  Whether you're seeking a romantic escape, a family vacation, or a peaceful retreat, 
-                  our diverse range of accommodations caters to every preference and need. Each space 
-                  is thoughtfully designed to provide panoramic sea views and direct beach access.
+                  {t.home.welcome.description2}
                 </p>
                 <Button asChild className="btn-primary">
                   <Link to="/about">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    {t.home.welcome.learnMore} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </div>
@@ -155,18 +154,16 @@ export default function Index() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
                 <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                  Book Your Stay
+                  {t.home.booking.subtitle}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">
-                  Reserve Your Perfect Getaway
+                  {t.home.booking.title}
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Take the first step towards your dream vacation by checking availability and 
-                  securing your preferred dates. Our simple booking process ensures a seamless 
-                  experience from reservation to arrival.
+                  {t.home.booking.description}
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {["Instant confirmation", "Best rate guarantee", "Flexible cancellation options", "Secure payment"].map((item, index) => (
+                  {t.home.booking.benefits.map((item, index) => (
                     <li key={index} className="flex items-center">
                       <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
                         <ArrowRight className="h-3 w-3" />
@@ -193,14 +190,13 @@ export default function Index() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                Our Accommodations
+                {t.home.featuredApartments.subtitle}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
-                Featured Apartments
+                {t.home.featuredApartments.title}
               </h2>
               <p className="text-muted-foreground">
-                Discover our most popular accommodation options, each offering a perfect blend of comfort, 
-                style, and breathtaking sea views.
+                {t.home.featuredApartments.description}
               </p>
             </div>
             
@@ -215,7 +211,7 @@ export default function Index() {
             <div className="text-center mt-12">
               <Button asChild className="btn-primary">
                 <Link to="/apartments">
-                  View All Apartments <ArrowRight className="ml-2 h-4 w-4" />
+                  {t.home.featuredApartments.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -230,13 +226,13 @@ export default function Index() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                Hotel Amenities
+                {t.home.amenities.subtitle}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
-                Experience The Best
+                {t.home.amenities.title}
               </h2>
               <p className="text-muted-foreground">
-                Enjoy our premium facilities and services designed to make your stay exceptional.
+                {t.home.amenities.description}
               </p>
             </div>
             
@@ -263,13 +259,13 @@ export default function Index() {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready for Your Dream Vacation?
+                {t.home.cta.title}
               </h2>
               <p className="text-muted-foreground mb-8">
-                Book your stay today and experience the perfect blend of luxury, comfort, and stunning sea views.
+                {t.home.cta.description}
               </p>
               <Button asChild size="lg" className="btn-primary">
-                <Link to="/booking">Book Now</Link>
+                <Link to="/booking">{t.home.cta.bookNow}</Link>
               </Button>
             </div>
           </div>

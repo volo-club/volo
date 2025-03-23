@@ -1,4 +1,3 @@
-
 export const it = {
   nav: {
     home: "Home",
@@ -47,7 +46,6 @@ export const it = {
     description: "Non siamo riusciti a trovare la pagina che stavi cercando. Forse hai preso una svolta sbagliata in paradiso?",
     returnHome: "Torna alla Home"
   },
-  // Added apartment page translations
   apartments: {
     title: "I Nostri Appartamenti e Camere",
     subtitle: "Scopri la nostra selezione di alloggi premium, dalle accoglienti mansarde ai lussuosi attici.",
@@ -72,7 +70,6 @@ export const it = {
       more: "altro"
     }
   },
-  // Gallery page translations
   gallery: {
     title: "Galleria Fotografica",
     subtitle: "Esplora il nostro paradiso sul mare attraverso immagini suggestive.",
@@ -83,7 +80,6 @@ export const it = {
       amenities: "Servizi"
     }
   },
-  // Booking page translations
   booking: {
     title: "Prenota il tuo Soggiorno",
     subtitle: "Completa la tua prenotazione in pochi semplici passi.",
@@ -172,7 +168,6 @@ export const it = {
       returnToHome: "Torna alla Homepage"
     }
   },
-  // Contact page translations
   contact: {
     title: "Contattaci",
     subtitle: "Siamo qui per aiutarti a rendere il tuo soggiorno indimenticabile. Contattaci per qualsiasi domanda o richiesta speciale.",
@@ -221,7 +216,158 @@ export const it = {
       }
     }
   },
-  // Apartment descriptions
+  home: {
+    welcome: {
+      subtitle: "Benvenuti a MareSereno",
+      title: "Alloggi di Lusso sul Mare",
+      description1: "Situato sulla incontaminata costa mediterranea, MareSereno offre una squisita collezione di appartamenti di lusso e camere d'albergo. I nostri alloggi fronte mare combinano un design elegante con comfort moderni, creando l'ambientazione perfetta per una indimenticabile fuga al mare.",
+      description2: "Che tu stia cercando una fuga romantica, una vacanza in famiglia o un ritiro tranquillo, la nostra vasta gamma di alloggi si adatta a ogni preferenza ed esigenza. Ogni spazio è progettato con cura per fornire viste panoramiche sul mare e accesso diretto alla spiaggia.",
+      learnMore: "Scopri di Più"
+    },
+    booking: {
+      subtitle: "Prenota il tuo Soggiorno",
+      title: "Prenota la tua Vacanza Perfetta",
+      description: "Fai il primo passo verso la tua vacanza da sogno verificando la disponibilità e assicurandoti le date preferite. Il nostro semplice processo di prenotazione garantisce un'esperienza senza interruzioni dalla prenotazione all'arrivo.",
+      benefits: ["Conferma istantanea", "Miglior tariffa garantita", "Opzioni di cancellazione flessibili", "Pagamento sicuro"]
+    },
+    featuredApartments: {
+      subtitle: "I Nostri Alloggi",
+      title: "Appartamenti in Evidenza",
+      description: "Scopri le nostre opzioni di alloggio più popolari, ognuna che offre un perfetto equilibrio di comfort, stile e viste mozzafiato sul mare.",
+      viewAll: "Visualizza Tutti gli Appartamenti"
+    },
+    amenities: {
+      subtitle: "Servizi dell'Hotel",
+      title: "Vivi il Meglio",
+      description: "Goditi le nostre strutture e servizi premium progettati per rendere il tuo soggiorno eccezionale.",
+      features: {
+        beachfront: {
+          title: "Posizione Fronte Mare",
+          description: "Accesso diretto a spiagge incontaminate con acque cristalline."
+        },
+        pools: {
+          title: "Piscine",
+          description: "Rilassati accanto alle nostre piscine a sfioro con vista mozzafiato sul mare."
+        },
+        restaurant: {
+          title: "Ristorante Gourmet",
+          description: "Goditi squisita cucina locale e internazionale."
+        },
+        wifi: {
+          title: "Wi-Fi ad Alta Velocità",
+          description: "Rimani connesso con internet ad alta velocità gratuito."
+        },
+        bar: {
+          title: "Bar & Caffè sulla Spiaggia",
+          description: "Bevande rinfrescanti e snack serviti direttamente sulla spiaggia."
+        },
+        location: {
+          title: "Posizione Privilegiata",
+          description: "Vicino alle attrazioni locali, negozi e ristoranti."
+        }
+      }
+    },
+    cta: {
+      title: "Pronto per la tua Vacanza da Sogno?",
+      description: "Prenota il tuo soggiorno oggi e vivi il perfetto connubio di lusso, comfort e viste mozzafiato sul mare.",
+      bookNow: "Prenota Ora"
+    }
+  },
+  amenitiesPage: {
+    title: "I Nostri Servizi",
+    subtitle: "Scopri i servizi e le comodità di lusso che rendono il tuo soggiorno indimenticabile.",
+    description: "A MareSereno, ci dedichiamo a fornire un'esperienza di soggiorno completa e lussuosa. Dai nostri servizi sulla spiaggia alle strutture di benessere, ogni dettaglio è stato curato per garantire il massimo comfort e piacere.",
+    categories: {
+      wellness: {
+        title: "Benessere e Relax",
+        description: "Trattati con la nostra gamma di servizi benessere progettati per ringiovanire corpo e mente.",
+        items: [
+          {
+            title: "Spa di Lusso",
+            description: "La nostra spa offre una gamma completa di trattamenti, dalle terapie tradizionali ai trattamenti di bellezza più moderni."
+          },
+          {
+            title: "Centro Fitness",
+            description: "Mantieni la tua routine di fitness con la nostra palestra all'avanguardia con vista panoramica sul mare."
+          },
+          {
+            title: "Piscina Infinity",
+            description: "Immergiti nella nostra piscina a sfioro mentre ammiri l'orizzonte infinito del mare."
+          },
+          {
+            title: "Yoga sulla Spiaggia",
+            description: "Partecipa alle nostre sessioni di yoga mattutine sulla spiaggia per un risveglio rivitalizzante."
+          }
+        ]
+      },
+      dining: {
+        title: "Ristorazione",
+        description: "Scopri il meglio della cucina locale e internazionale nei nostri ristoranti e bar.",
+        items: [
+          {
+            title: "Ristorante Gourmet",
+            description: "Assapora piatti raffinati preparati dai nostri chef con ingredienti locali freschi."
+          },
+          {
+            title: "Bar sulla Spiaggia",
+            description: "Goditi cocktail rinfrescanti e snack leggeri con i piedi nella sabbia."
+          },
+          {
+            title: "Lounge Bar",
+            description: "Rilassati con una selezione di vini pregiati e liquori in un'atmosfera elegante."
+          },
+          {
+            title: "Servizio in Camera",
+            description: "Goditi pasti gourmet nella privacy del tuo appartamento, disponibile 24 ore su 24."
+          }
+        ]
+      },
+      services: {
+        title: "Servizi Extra",
+        description: "Approfitta dei nostri servizi aggiuntivi per un soggiorno senza problemi.",
+        items: [
+          {
+            title: "Concierge 24/7",
+            description: "Il nostro team di concierge è disponibile in qualsiasi momento per assisterti con qualsiasi richiesta."
+          },
+          {
+            title: "Trasferimenti Aeroportuali",
+            description: "Viaggia comodamente da e per l'aeroporto con il nostro servizio di trasferimento privato."
+          },
+          {
+            title: "Noleggio Auto",
+            description: "Esplora la zona con la nostra flotta di veicoli premium disponibili per il noleggio."
+          },
+          {
+            title: "Escursioni Guidate",
+            description: "Scopri le attrazioni locali con le nostre escursioni personalizzate guidate da esperti."
+          }
+        ]
+      },
+      entertainment: {
+        title: "Intrattenimento",
+        description: "Goditi una varietà di attività ricreative pensate per tutti i gusti.",
+        items: [
+          {
+            title: "Sport Acquatici",
+            description: "Prova una vasta gamma di sport acquatici, dal paddleboarding al jet skiing."
+          },
+          {
+            title: "Area Giochi per Bambini",
+            description: "I più piccoli possono divertirsi nella nostra area giochi sicura e supervisionata."
+          },
+          {
+            title: "Serate a Tema",
+            description: "Partecipa alle nostre serate a tema settimanali con musica dal vivo e intrattenimento."
+          },
+          {
+            title: "Biblioteca & Sala Giochi",
+            description: "Rilassati con un buon libro o goditi i giochi da tavolo nella nostra sala comune."
+          }
+        ]
+      }
+    }
+  },
   apartmentDescriptions: {
     "1": {
       name: "Suite Vista Mare Deluxe",
