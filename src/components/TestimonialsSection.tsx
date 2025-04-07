@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star, UserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -151,7 +150,7 @@ export default function TestimonialsSection() {
                   }}
                   className={`w-3 h-3 rounded-full transition-all ${
                     activeIndex === index 
-                      ? "bg-primary w-6" 
+                      ? "bg-accent-600 w-6" 
                       : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
