@@ -1,48 +1,112 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Add scroll event listener to change navbar appearance when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className="fixed w-full bg-white/95 backdrop-blur-sm z-50 py-4 shadow-sm">
+    <header className={cn(
+      "fixed w-full z-50 transition-all duration-300", 
+      isScrolled 
+        ? "bg-white/95 backdrop-blur-sm py-4 shadow-sm" 
+        : "bg-transparent py-5"
+    )}>
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-bold text-primary-600">VOLO</span>
+          <span className={cn(
+            "text-2xl font-bold transition-colors", 
+            isScrolled ? "text-primary-600" : "text-white"
+          )}>VOLO</span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-neutral-700 hover:text-primary-600 font-medium">
+          <Link 
+            to="/" 
+            className={cn(
+              "font-medium transition-colors", 
+              isScrolled 
+                ? "text-neutral-700 hover:text-primary-600" 
+                : "text-white/90 hover:text-white"
+            )}
+          >
             Home
           </Link>
-          <Link to="/how-it-works" className="text-neutral-700 hover:text-primary-600 font-medium">
+          <Link 
+            to="/how-it-works" 
+            className={cn(
+              "font-medium transition-colors", 
+              isScrolled 
+                ? "text-neutral-700 hover:text-primary-600" 
+                : "text-white/90 hover:text-white"
+            )}
+          >
             How It Works
           </Link>
-          <Link to="/destinations" className="text-neutral-700 hover:text-primary-600 font-medium">
+          <Link 
+            to="/destinations" 
+            className={cn(
+              "font-medium transition-colors", 
+              isScrolled 
+                ? "text-neutral-700 hover:text-primary-600" 
+                : "text-white/90 hover:text-white"
+            )}
+          >
             Destinations
           </Link>
-          <Link to="/pricing" className="text-neutral-700 hover:text-primary-600 font-medium">
+          <Link 
+            to="/pricing" 
+            className={cn(
+              "font-medium transition-colors", 
+              isScrolled 
+                ? "text-neutral-700 hover:text-primary-600" 
+                : "text-white/90 hover:text-white"
+            )}
+          >
             Pricing
           </Link>
         </nav>
 
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <button className="btn btn-outline">Login</button>
-          <button className="btn btn-primary">Sign Up</button>
+          <button className={cn(
+            "btn transition-all", 
+            isScrolled 
+              ? "btn-outline border-primary-500 text-primary-500 hover:bg-primary-50" 
+              : "border border-white/70 text-white hover:bg-white/20"
+          )}>Login</button>
+          <button className={cn(
+            "btn transition-all", 
+            isScrolled 
+              ? "btn-primary bg-primary-500 text-white" 
+              : "bg-white/90 hover:bg-white text-primary-700"
+          )}>Sign Up</button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-neutral-700 hover:text-primary-600"
+          className={cn(
+            "md:hidden hover:opacity-80 transition-opacity",
+            isScrolled ? "text-neutral-700" : "text-white"
+          )}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
