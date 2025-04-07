@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/HeroSection";
-import { ArrowRight, MapPin, Zap, Clock, ShieldCheck, Edit, Users, Ticket, Plane, User } from "lucide-react";
+import { ArrowRight, MapPin, Zap, Clock, ShieldCheck, Edit, Users, Ticket, Plane, User, Wallet, DollarSign, Hotel, Map } from "lucide-react";
 import { 
   Carousel,
   CarouselContent,
@@ -15,6 +15,7 @@ import { Slider } from "@/components/ui/slider";
 
 export default function Index() {
   const [isMobile, setIsMobile] = useState(false);
+  const [budget, setBudget] = useState([2500]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -89,6 +90,89 @@ export default function Index() {
               <p className="text-neutral-600">
                 Book the best deals and get ready to travel!
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Budget Planning Section */}
+      <section className="py-12 bg-[#D3E4FD]">
+        <div className="container">
+          <div className="rounded-xl bg-white/80 backdrop-blur-sm shadow-md p-6 md:p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <Wallet className="h-6 w-6 text-[#9b87f5]" />
+                  <h3 className="text-2xl font-semibold">Plan by Budget</h3>
+                </div>
+                <p className="text-neutral-600">
+                  Adjust your budget and see how it affects your trip. Our AI finds the best prices to keep your trip on budget.
+                </p>
+                <div className="space-y-6 pt-2">
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm font-medium text-neutral-500">Budget</span>
+                      <span className="text-sm font-medium text-primary-600">${budget[0]}</span>
+                    </div>
+                    <Slider 
+                      value={budget} 
+                      onValueChange={setBudget} 
+                      max={5000} 
+                      step={100}
+                      className="w-full" 
+                    />
+                    <div className="flex justify-between text-xs text-neutral-500">
+                      <span>$500</span>
+                      <span>$5000</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-4 w-4 text-neutral-500" />
+                    <span className="text-sm text-neutral-600">Duration: 7 days</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white p-5 rounded-lg shadow-sm">
+                <h4 className="font-medium mb-4 flex items-center gap-2">
+                  <DollarSign className="h-5 w-5 text-[#9b87f5]" />
+                  Cost Breakdown
+                </h4>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center pb-2 border-b border-neutral-100">
+                    <div className="flex items-center gap-2">
+                      <Plane className="h-4 w-4 text-neutral-500" />
+                      <span className="text-sm">Flights</span>
+                    </div>
+                    <span className="font-medium">${Math.round(budget[0] * 0.4)}</span>
+                  </div>
+                  <div className="flex justify-between items-center pb-2 border-b border-neutral-100">
+                    <div className="flex items-center gap-2">
+                      <Hotel className="h-4 w-4 text-neutral-500" />
+                      <span className="text-sm">Accommodations</span>
+                    </div>
+                    <span className="font-medium">${Math.round(budget[0] * 0.35)}</span>
+                  </div>
+                  <div className="flex justify-between items-center pb-2 border-b border-neutral-100">
+                    <div className="flex items-center gap-2">
+                      <Map className="h-4 w-4 text-neutral-500" />
+                      <span className="text-sm">Experiences</span>
+                    </div>
+                    <span className="font-medium">${Math.round(budget[0] * 0.15)}</span>
+                  </div>
+                  <div className="flex justify-between items-center pb-2 border-b border-neutral-100">
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck className="h-4 w-4 text-neutral-500" />
+                      <span className="text-sm">Travel Insurance</span>
+                    </div>
+                    <span className="font-medium">${Math.round(budget[0] * 0.1)}</span>
+                  </div>
+                  <div className="flex justify-between items-center pt-1">
+                    <span className="font-medium">Total</span>
+                    <span className="font-bold text-primary-600">${budget[0]}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
