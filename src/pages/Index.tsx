@@ -1,6 +1,7 @@
+
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/HeroSection";
-import { ArrowRight, MapPin, Zap, Clock, ShieldCheck } from "lucide-react";
+import { ArrowRight, MapPin, Zap, Clock, ShieldCheck, Edit, Users, Ticket, Plane } from "lucide-react";
 
 export default function Index() {
   return (
@@ -8,60 +9,70 @@ export default function Index() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Feature Cards Section */}
-      <section id="features" className="py-16 bg-neutral-50">
+      {/* Process Steps Section */}
+      <section id="how-it-works" className="py-20 bg-white">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              How VOLO Works
+              How It Works
             </h2>
             <p className="text-neutral-600 text-lg">
-              Create your perfect trip in three simple steps
+              Planning your perfect trip in just four simple steps
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Feature Card 1 */}
-            <div className="card card-hover p-6 bg-white">
-              <div className="w-12 h-12 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center mb-4">
-                <span className="text-xl font-bold">1</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Step 1 */}
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center mb-4">
+                <MapPin size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Share Your Preferences</h3>
+              <h3 className="text-xl font-semibold mb-2">Tell us about your trip</h3>
               <p className="text-neutral-600">
-                Tell us about your travel style, food choices, must-see spots, and most importantly,
-                your budget constraints.
+                Fill in your destination, dates, and budget.
               </p>
             </div>
 
-            {/* Feature Card 2 */}
-            <div className="card card-hover p-6 bg-white">
-              <div className="w-12 h-12 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center mb-4">
-                <span className="text-xl font-bold">2</span>
+            {/* Step 2 */}
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center mb-4">
+                <Zap size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-2">AI Creates Your Itinerary</h3>
+              <h3 className="text-xl font-semibold mb-2">Get an AI-planned itinerary</h3>
               <p className="text-neutral-600">
-                Our AI analyzes thousands of options to create a personalized travel plan
-                that matches your preferences and budget.
+                Our AI creates a custom trip plan just for you.
               </p>
             </div>
 
-            {/* Feature Card 3 */}
-            <div className="card card-hover p-6 bg-white">
-              <div className="w-12 h-12 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center mb-4">
-                <span className="text-xl font-bold">3</span>
+            {/* Step 3 */}
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center mb-4">
+                <Edit size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Enjoy Your Perfect Trip</h3>
+              <h3 className="text-xl font-semibold mb-2">Personalize & share</h3>
               <p className="text-neutral-600">
-                Receive a detailed day-by-day itinerary with bookable links, local insights,
-                and Instagram-worthy photo spots.
+                Tweak the itinerary, invite friends to collaborate.
+              </p>
+            </div>
+
+            {/* Step 4 */}
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center mb-4">
+                <Plane size={24} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Book & enjoy</h3>
+              <p className="text-neutral-600">
+                Book the best deals and get ready to travel!
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Feature Cards Section - Removing as we've created a new section above */}
+
       {/* Popular Destinations Section */}
-      <section className="py-16">
+      <section className="py-16 bg-neutral-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
