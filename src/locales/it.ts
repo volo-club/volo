@@ -1,3 +1,4 @@
+
 const it = {
   nav: {
     home: "Home",
@@ -15,12 +16,17 @@ const it = {
   footer: {
     description: "MareSereno offre alloggi di lusso sul mare nel cuore del Mediterraneo. Vivi la perfetta combinazione di comfort moderno e fascino costiero.",
     quickLinks: "Link Rapidi",
+    contact: "Contattaci",
     contactUs: "Contattaci",
     address: "123 Via Costiera, Costa Amalfitana, Italia",
     phone: "+39 123 456 7890",
     email: "info@maresereno.com",
     copyright: "© 2025 MareSereno. Tutti i diritti riservati.",
-    allRights: "Tutti i diritti riservati."
+    allRights: "Tutti i diritti riservati.",
+    newsletter: "Newsletter",
+    newsletterDesc: "Iscriviti alla nostra newsletter per offerte esclusive e aggiornamenti.",
+    yourEmail: "La tua Email",
+    subscribe: "Iscriviti"
   },
   testimonials: {
     title: "Cosa Dicono i Nostri Ospiti",

@@ -1,3 +1,4 @@
+
 const en = {
   nav: {
     home: "Home",
@@ -15,12 +16,17 @@ const en = {
   footer: {
     description: "MareSereno offers luxury beachfront accommodations in the heart of the Mediterranean. Experience the perfect blend of modern comfort and coastal charm.",
     quickLinks: "Quick Links",
+    contact: "Contact Us",
     contactUs: "Contact Us",
     address: "123 Coastal Drive, Amalfi Coast, Italy",
     phone: "+39 123 456 7890",
     email: "info@maresereno.com",
     copyright: "© 2025 MareSereno. All rights reserved.",
-    allRights: "All rights reserved."
+    allRights: "All rights reserved.",
+    newsletter: "Newsletter",
+    newsletterDesc: "Subscribe to our newsletter for exclusive offers and updates.",
+    yourEmail: "Your Email",
+    subscribe: "Subscribe"
   },
   testimonials: {
     title: "What Our Guests Say",
