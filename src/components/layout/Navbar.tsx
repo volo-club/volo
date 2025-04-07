@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
-// Import logo from the correct relative path instead of using @ alias
-import logoImage from "../../assets/logo.png";
 
+// Use hardcoded string for the logo as a temporary solution
+// until we figure out the correct path
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -36,14 +36,7 @@ export default function Navbar() {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <img 
-            src={logoImage} 
-            alt="VOLO Logo" 
-            className={cn(
-              "h-8 w-auto transition-all", 
-              scrolled ? "opacity-100" : "opacity-100"
-            )} 
-          />
+          <span className="text-xl font-bold">VOLO</span>
         </Link>
 
         {/* Desktop Navigation */}
