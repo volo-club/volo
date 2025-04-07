@@ -59,8 +59,8 @@ export default function HeroSection() {
             AI-powered trip planning
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Plan <span className="text-[#E5DEFF]">Influencer‑Style</span> Trips<br className="hidden sm:block" />
-            on a <span className="text-[#D3E4FD]">Budget</span>
+            Plan <span className="text-[#E5DEFF]">Influencer‑Style</span> Trips{" "}
+            <span className="whitespace-nowrap">on a <span className="text-[#D3E4FD]">Budget</span></span>
           </h1>
           <p className="text-base sm:text-lg text-white/90 mb-8 max-w-2xl mx-auto">
             AI-powered trip planning that makes dream vacations affordable and easy.
