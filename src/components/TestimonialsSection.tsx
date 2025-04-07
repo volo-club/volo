@@ -1,7 +1,9 @@
+
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, UserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 interface Testimonial {
   id: number;
@@ -72,14 +74,14 @@ export default function TestimonialsSection() {
   }, []);
   
   return (
-    <section className="section bg-muted py-20">
+    <section className="section bg-[#F1F0FB] py-20">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t.testimonials.title}
+            What Our Users Are Saying
           </h2>
           <p className="text-muted-foreground">
-            {t.testimonials.description}
+            Read testimonials from travelers who planned their perfect trips with our platform
           </p>
         </div>
         
@@ -89,7 +91,7 @@ export default function TestimonialsSection() {
               <div
                 key={testimonial.id}
                 className={cn(
-                  "absolute inset-0 glass-card p-8 md:p-10 transition-all duration-500",
+                  "absolute inset-0 bg-white/80 backdrop-blur-sm rounded-xl shadow-md p-8 md:p-10 transition-all duration-500",
                   activeIndex === index 
                     ? "opacity-100 translate-x-0 z-10"
                     : index < activeIndex 
@@ -99,13 +101,12 @@ export default function TestimonialsSection() {
               >
                 <div className="flex flex-col md:flex-row gap-6 h-full">
                   <div className="flex flex-col items-center md:items-start">
-                    <div className="rounded-full overflow-hidden w-20 h-20 mb-4 border-2 border-primary">
-                      <img 
-                        src={testimonial.avatar} 
-                        alt={testimonial.name} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    <Avatar className="w-20 h-20 mb-4 border-2 border-primary">
+                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                      <AvatarFallback>
+                        <UserRound className="h-10 w-10" />
+                      </AvatarFallback>
+                    </Avatar>
                     <div className="flex mb-2">
                       {[...Array(5)].map((_, i) => (
                         <Star 

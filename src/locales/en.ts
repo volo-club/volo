@@ -1,19 +1,16 @@
-export const en = {
+const en = {
   nav: {
     home: "Home",
     apartments: "Apartments",
     amenities: "Amenities",
     gallery: "Gallery",
     contact: "Contact",
-    bookNow: "Book Now"
+    book: "Book Now"
   },
   hero: {
-    subtitle: "BEACHFRONT LUXURY ACCOMMODATION",
-    title: "Experience Seaside Tranquility",
-    description: "Discover our exclusive collection of luxury beachfront apartments and hotel rooms, offering unparalleled comfort and breathtaking sea views.",
-    bookStay: "Book Your Stay",
-    exploreApartments: "Explore Apartments",
-    scrollDown: "Scroll Down"
+    title: "Your Beachfront Paradise",
+    subtitle: "Luxury apartments with stunning sea views",
+    cta: "Book Your Stay"
   },
   footer: {
     description: "Luxurious beachfront apartments and hotel rooms with stunning sea views, offering the perfect blend of comfort and elegance for your dream vacation.",
@@ -38,8 +35,8 @@ export const en = {
     bookingConfirmed: "Booking Confirmed!"
   },
   testimonials: {
-    title: "What Our Guests Say",
-    description: "Discover why our guests keep coming back to MareSereno for their seaside getaways."
+    title: "What Our Users Are Saying",
+    description: "Read testimonials from travelers who planned their perfect trips with our platform"
   },
   notFound: {
     title: "Page Not Found",
@@ -395,3 +392,5 @@ export const en = {
     }
   }
 };
+
+export default en;

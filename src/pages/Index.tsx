@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/HeroSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import { ArrowRight, MapPin, Zap, Clock, ShieldCheck, Edit, Users, Ticket, Plane, User, Wallet, DollarSign, Hotel, Map } from "lucide-react";
 import { 
   Carousel,
@@ -177,6 +178,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* Get Inspired Section */}
       <section className="py-16 bg-neutral-50">
