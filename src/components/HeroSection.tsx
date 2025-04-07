@@ -35,7 +35,7 @@ export default function HeroSection() {
   const contentY = scrollY * 0.2;
   
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative min-h-[90vh] md:min-h-screen overflow-hidden pt-16 md:pt-0">
       {/* Background image with parallax */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -51,31 +51,31 @@ export default function HeroSection() {
       
       {/* Content */}
       <div
-        className="relative h-full flex flex-col justify-center items-center text-center px-4"
+        className="relative h-full flex flex-col justify-center items-center text-center px-4 py-8 md:py-0"
         style={{ transform: `translateY(${contentY}px)` }}
       >
         <div className="max-w-3xl animate-fade-in">
-          <span className="inline-block text-white/90 text-sm md:text-lg mb-4 tracking-wide border-b border-white/30 pb-2">
+          <span className="inline-block text-white/90 text-sm md:text-lg mb-2 md:mb-4 tracking-wide border-b border-white/30 pb-2">
             AI-powered trip planning
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-6">
             Plan <span className="text-[#E5DEFF]">Influencer‑Style</span> Trips{" "}
             <span className="whitespace-nowrap">on a <span className="text-[#D3E4FD]">Budget</span></span>
           </h1>
-          <p className="text-base sm:text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-white/90 mb-4 md:mb-8 max-w-2xl mx-auto">
             AI-powered trip planning that makes dream vacations affordable and easy.
           </p>
           <div className={cn(
-            "flex items-center justify-center gap-4",
+            "flex items-center justify-center gap-3 md:gap-4",
             isMobile ? "flex-col w-full" : "flex-row"
           )}>
-            <Button asChild size="lg" variant="heroSolid" className={cn(
+            <Button asChild size={isMobile ? "default" : "lg"} variant="heroSolid" className={cn(
               "transform transition-all duration-300 hover:scale-105 hover:shadow-glow",
               isMobile ? "w-full" : "min-w-[200px]"
             )}>
               <Link to="/plan-trip">Plan Your Trip</Link>
             </Button>
-            <Button asChild variant="hero" size="lg" className={cn(
+            <Button asChild variant="hero" size={isMobile ? "default" : "lg"} className={cn(
               "transform transition-all duration-300 hover:scale-105 hover:shadow-glow",
               isMobile ? "w-full" : "min-w-[200px]"
             )}>
@@ -86,21 +86,21 @@ export default function HeroSection() {
       </div>
       
       {/* Scroll down indicator with enhanced animation */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white">
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 text-white">
         <a 
           href="#how-it-works" 
           onClick={(e) => scrollToSection(e, 'how-it-works')}
           className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity group select-none focus:outline-none"
         >
-          <span className="text-sm mb-2 group-hover:translate-y-1 transition-transform duration-300">Discover More</span>
-          <ChevronDown className="h-6 w-6 animate-bounce group-hover:animate-pulse pointer-events-none" />
+          <span className="text-xs md:text-sm mb-1 md:mb-2 group-hover:translate-y-1 transition-transform duration-300">Discover More</span>
+          <ChevronDown className="h-5 w-5 md:h-6 md:w-6 animate-bounce group-hover:animate-pulse pointer-events-none" />
         </a>
       </div>
       
       {/* Animated wave */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 h-16 md:h-24 overflow-hidden">
         <svg 
-          className="absolute bottom-0 w-full h-24 fill-white dark:fill-background"
+          className="absolute bottom-0 w-full h-16 md:h-24 fill-white dark:fill-background"
           preserveAspectRatio="none"
           viewBox="0 0 1440 74"
           xmlns="http://www.w3.org/2000/svg"
