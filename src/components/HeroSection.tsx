@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
@@ -91,10 +90,10 @@ export default function HeroSection() {
         <a 
           href="#how-it-works" 
           onClick={(e) => scrollToSection(e, 'how-it-works')}
-          className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity group"
+          className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity group select-none focus:outline-none"
         >
           <span className="text-sm mb-2 group-hover:translate-y-1 transition-transform duration-300">Discover More</span>
-          <ChevronDown className="h-6 w-6 animate-bounce group-hover:animate-pulse" />
+          <ChevronDown className="h-6 w-6 animate-bounce group-hover:animate-pulse pointer-events-none" />
         </a>
       </div>
       
