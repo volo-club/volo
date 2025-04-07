@@ -27,18 +27,18 @@ export default function Navbar() {
   return (
     <header className={cn(
       "fixed w-full z-50 transition-all duration-300",
-      scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm py-3" : "bg-gradient-to-r from-primary-500/70 to-primary-600/70 py-5"
+      scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm py-3" : "bg-transparent py-5"
     )}>
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <Globe className={cn(
             "h-6 w-6 transition-colors",
-            scrolled ? "text-primary-600" : "text-white"
+            scrolled ? "text-primary-600" : "text-neutral-800 dark:text-white"
           )} />
           <span className={cn(
             "text-2xl font-bold transition-colors",
-            scrolled ? "text-primary-600" : "text-white"
+            scrolled ? "text-primary-600" : "text-neutral-800 dark:text-white"
           )}>
             VOLO
           </span>
@@ -48,19 +48,19 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/how-it-works" className={cn(
             "font-medium transition-colors hover:text-primary-600",
-            scrolled ? "text-neutral-700" : "text-white hover:text-white/80"
+            scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
           )}>
             How It Works
           </Link>
           <Link to="/explore-trips" className={cn(
             "font-medium transition-colors hover:text-primary-600",
-            scrolled ? "text-neutral-700" : "text-white hover:text-white/80"
+            scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
           )}>
             Explore Trips
           </Link>
           <Link to="/about" className={cn(
             "font-medium transition-colors hover:text-primary-600",
-            scrolled ? "text-neutral-700" : "text-white hover:text-white/80"
+            scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
           )}>
             About
           </Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
             to="/login" 
             className={cn(
               "font-medium px-4 py-2 transition-colors hover:text-primary-600",
-              scrolled ? "text-neutral-700" : "text-white hover:text-white/80"
+              scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
             )}
           >
             Log In
@@ -83,7 +83,7 @@ export default function Navbar() {
               "px-6 py-2 rounded-md font-medium transition-all",
               scrolled 
                 ? "bg-accent-500 text-white hover:bg-accent-600" 
-                : "bg-white/20 text-white backdrop-blur-sm border border-white/30 hover:bg-white/30"
+                : "bg-neutral-800 text-white hover:bg-neutral-900 dark:bg-white/20 dark:text-white dark:backdrop-blur-sm dark:border dark:border-white/30 dark:hover:bg-white/30"
             )}
           >
             Sign Up
@@ -94,7 +94,7 @@ export default function Navbar() {
         <button
           className={cn(
             "md:hidden transition-colors",
-            scrolled ? "text-neutral-700" : "text-white"
+            scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
           )}
           onClick={toggleMenu}
           aria-label="Toggle menu"
