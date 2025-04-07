@@ -1,4 +1,5 @@
 
+import React from 'react';
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/HeroSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -422,13 +423,13 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-700 text-white">
+      <section className="py-20 bg-neutral-50 text-neutral-900">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">
               Ready to Plan Your Next Adventure?
             </h2>
-            <p className="text-lg text-white/90">
+            <p className="text-lg text-neutral-700">
               Join thousands of travelers who've already created their perfect trips with VOLO.
               Your influencer-worthy journey awaits!
             </p>
@@ -441,7 +442,7 @@ export default function Index() {
                 Start Planning for Free
                 <ArrowRight size={16} />
               </Button>
-              <p className="text-sm text-white/80 mt-3">Takes less than 2 minutes to get your first itinerary!</p>
+              <p className="text-sm text-neutral-600 mt-3">Takes less than 2 minutes to get your first itinerary!</p>
             </div>
           </div>
         </div>
