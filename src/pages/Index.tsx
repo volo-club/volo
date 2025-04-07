@@ -208,12 +208,12 @@ export default function Index() {
                     <div className="relative h-64 overflow-hidden">
                       <div 
                         className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1500375592092-40eb2168fd21)' }}
+                        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1024&auto=format&fit=crop)' }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80" />
                       <div className="absolute bottom-0 left-0 p-4 text-white">
-                        <h3 className="text-xl font-bold">Bali Paradise Escape</h3>
-                        <div className="flex items-center text-sm mt-1">
+                        <h3 className="text-xl font-bold drop-shadow-md !text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Bali Paradise Escape</h3>
+                        <div className="flex items-center text-sm mt-1 !text-white" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
                           <span className="mr-2">7 Days</span>
                           <span className="flex items-center">
                             <User size={14} className="mr-1" />
@@ -242,12 +242,12 @@ export default function Index() {
                     <div className="relative h-64 overflow-hidden">
                       <div 
                         className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1482938289607-e9573fc25ebb)' }}
+                        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=1024&auto=format&fit=crop)' }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80" />
                       <div className="absolute bottom-0 left-0 p-4 text-white">
-                        <h3 className="text-xl font-bold">Swiss Alps Adventure</h3>
-                        <div className="flex items-center text-sm mt-1">
+                        <h3 className="text-xl font-bold drop-shadow-md !text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Swiss Alps Adventure</h3>
+                        <div className="flex items-center text-sm mt-1 !text-white" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
                           <span className="mr-2">5 Days</span>
                           <span className="flex items-center">
                             <User size={14} className="mr-1" />
@@ -276,12 +276,12 @@ export default function Index() {
                     <div className="relative h-64 overflow-hidden">
                       <div 
                         className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1426604966848-d7adac402bff)' }}
+                        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1024&auto=format&fit=crop)' }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80" />
                       <div className="absolute bottom-0 left-0 p-4 text-white">
-                        <h3 className="text-xl font-bold">Kyoto Cultural Immersion</h3>
-                        <div className="flex items-center text-sm mt-1">
+                        <h3 className="text-xl font-bold drop-shadow-md !text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Kyoto Cultural Immersion</h3>
+                        <div className="flex items-center text-sm mt-1 !text-white" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
                           <span className="mr-2">6 Days</span>
                           <span className="flex items-center">
                             <User size={14} className="mr-1" />
@@ -316,12 +316,12 @@ export default function Index() {
                 <div className="relative h-64 overflow-hidden">
                   <div 
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1500375592092-40eb2168fd21)' }}
+                    style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1024&auto=format&fit=crop)' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80" />
                   <div className="absolute bottom-0 left-0 p-4 text-white">
-                    <h3 className="text-xl font-bold">Bali Paradise Escape</h3>
-                    <div className="flex items-center text-sm mt-1">
+                    <h3 className="text-xl font-bold drop-shadow-md !text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Bali Paradise Escape</h3>
+                    <div className="flex items-center text-sm mt-1 !text-white" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
                       <span className="mr-2">7 Days</span>
                       <span className="flex items-center">
                         <User size={14} className="mr-1" />
@@ -348,12 +348,12 @@ export default function Index() {
                 <div className="relative h-64 overflow-hidden">
                   <div 
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1482938289607-e9573fc25ebb)' }}
+                    style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=1024&auto=format&fit=crop)' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80" />
                   <div className="absolute bottom-0 left-0 p-4 text-white">
-                    <h3 className="text-xl font-bold">Swiss Alps Adventure</h3>
-                    <div className="flex items-center text-sm mt-1">
+                    <h3 className="text-xl font-bold drop-shadow-md !text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Swiss Alps Adventure</h3>
+                    <div className="flex items-center text-sm mt-1 !text-white" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
                       <span className="mr-2">5 Days</span>
                       <span className="flex items-center">
                         <User size={14} className="mr-1" />
@@ -380,12 +380,12 @@ export default function Index() {
                 <div className="relative h-64 overflow-hidden">
                   <div 
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1426604966848-d7adac402bff)' }}
+                    style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1024&auto=format&fit=crop)' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80" />
                   <div className="absolute bottom-0 left-0 p-4 text-white">
-                    <h3 className="text-xl font-bold">Kyoto Cultural Immersion</h3>
-                    <div className="flex items-center text-sm mt-1">
+                    <h3 className="text-xl font-bold drop-shadow-md !text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Kyoto Cultural Immersion</h3>
+                    <div className="flex items-center text-sm mt-1 !text-white" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
                       <span className="mr-2">6 Days</span>
                       <span className="flex items-center">
                         <User size={14} className="mr-1" />
