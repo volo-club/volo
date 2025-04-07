@@ -8,19 +8,34 @@ const en = {
     book: "Book Now"
   },
   hero: {
-    title: "Your Beachfront Paradise",
-    subtitle: "Luxury apartments with stunning sea views",
-    cta: "Book Your Stay"
+    title: "Plan Your Perfect Trip",
+    subtitle: "AI-powered travel planning that creates your dream itinerary in seconds",
+    cta: "Start Planning"
   },
   footer: {
-    description: "Luxurious beachfront apartments and hotel rooms with stunning sea views, offering the perfect blend of comfort and elegance for your dream vacation.",
+    description: "MareSereno offers luxury beachfront accommodations in the heart of the Mediterranean. Experience the perfect blend of modern comfort and coastal charm.",
     quickLinks: "Quick Links",
-    contact: "Contact",
-    newsletter: "Newsletter",
-    newsletterDesc: "Subscribe to our newsletter for special deals and updates.",
-    yourEmail: "Your email address",
-    subscribe: "Subscribe",
+    contactUs: "Contact Us",
+    address: "123 Coastal Drive, Amalfi Coast, Italy",
+    phone: "+39 123 456 7890",
+    email: "info@maresereno.com",
+    copyright: "© 2025 MareSereno. All rights reserved.",
     allRights: "All rights reserved."
+  },
+  testimonials: {
+    title: "What Our Guests Say",
+    subtitle: "Read testimonials from travelers who experienced our accommodations"
+  },
+  trustBadges: {
+    title: "Trusted by travelers worldwide",
+    featured: "Featured In",
+    endorsed: "Top Pick",
+    secure: "Secure Payments",
+    secureDesc: "Your data is always protected",
+    users: "1,000+ Happy Users",
+    usersDesc: "Join our satisfied customers",
+    rating: "4.8/5 Rating",
+    ratingDesc: "Based on 500+ reviews"
   },
   bookingForm: {
     title: "Book Your Stay",
@@ -33,10 +48,6 @@ const en = {
     selectDate: "Select date",
     checkAvailability: "Check Availability",
     bookingConfirmed: "Booking Confirmed!"
-  },
-  testimonials: {
-    title: "What Our Users Are Saying",
-    description: "Read testimonials from travelers who planned their perfect trips with our platform"
   },
   notFound: {
     title: "Page Not Found",

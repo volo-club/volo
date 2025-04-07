@@ -1,4 +1,3 @@
-
 const it = {
   nav: {
     home: "Home",
@@ -9,66 +8,34 @@ const it = {
     book: "Prenota Ora"
   },
   hero: {
-    title: "Il Tuo Paradiso Sul Mare",
-    subtitle: "Appartamenti di lusso con vista mare mozzafiato",
-    cta: "Prenota Il Tuo Soggiorno"
-  },
-  process: {
-    title: "Come Funziona",
-    steps: [
-      {
-        title: "Dicci del tuo viaggio",
-        description: "Inserisci la tua destinazione, le date e il budget."
-      },
-      {
-        title: "Ottieni un itinerario pianificato dall'AI",
-        description: "La nostra AI crea un piano di viaggio personalizzato solo per te."
-      },
-      {
-        title: "Personalizza e condividi",
-        description: "Modifica l'itinerario, invita gli amici a collaborare."
-      },
-      {
-        title: "Prenota e goditi",
-        description: "Prenota le migliori offerte e preparati a viaggiare!"
-      }
-    ]
-  },
-  budget: {
-    title: "Pianifica in base al budget",
-    description: "Regola il tuo budget e guarda come influisce sul tuo viaggio. La nostra AI trova i prezzi migliori per mantenere il tuo viaggio nel budget.",
-    duration: "Durata: 7 giorni"
-  },
-  costBreakdown: {
-    title: "Ripartizione dei costi",
-    flights: "Voli",
-    accommodations: "Alloggi",
-    experiences: "Esperienze",
-    travelInsurance: "Assicurazione di viaggio",
-    total: "Totale"
-  },
-  inspired: {
-    title: "Lasciati ispirare",
-    description: "Scopri fantastici viaggi creati dagli appassionati di viaggi"
-  },
-  cta: {
-    title: "Pronto a pianificare la tua prossima avventura?",
-    description: "Unisciti a migliaia di viaggiatori che hanno già creato i loro viaggi perfetti con VOLO. Il tuo viaggio degno di influencer ti aspetta!",
-    button: "Inizia a pianificare gratuitamente"
-  },
-  testimonials: {
-    title: "Cosa Dicono I Nostri Utenti",
-    description: "Leggi le testimonianze dei viaggiatori che hanno pianificato i loro viaggi perfetti con la nostra piattaforma"
+    title: "Pianifica il Tuo Viaggio Perfetto",
+    subtitle: "Pianificazione di viaggi basata su AI che crea il tuo itinerario da sogno in pochi secondi",
+    cta: "Inizia a Pianificare"
   },
   footer: {
-    description: "Lussuosi appartamenti sul mare e camere d'albergo con splendida vista sul mare, offrendo il perfetto equilibrio tra comfort ed eleganza per la tua vacanza da sogno.",
+    description: "MareSereno offre alloggi di lusso sul mare nel cuore del Mediterraneo. Vivi la perfetta combinazione di comfort moderno e fascino costiero.",
     quickLinks: "Link Rapidi",
-    contact: "Contatti",
-    newsletter: "Newsletter",
-    newsletterDesc: "Iscriviti alla nostra newsletter per offerte speciali e aggiornamenti.",
-    yourEmail: "Il tuo indirizzo email",
-    subscribe: "Iscriviti",
+    contactUs: "Contattaci",
+    address: "123 Via Costiera, Costa Amalfitana, Italia",
+    phone: "+39 123 456 7890",
+    email: "info@maresereno.com",
+    copyright: "© 2025 MareSereno. Tutti i diritti riservati.",
     allRights: "Tutti i diritti riservati."
+  },
+  testimonials: {
+    title: "Cosa Dicono i Nostri Ospiti",
+    subtitle: "Leggi le testimonianze di viaggiatori che hanno soggiornato nelle nostre strutture"
+  },
+  trustBadges: {
+    title: "Scelto dai viaggiatori di tutto il mondo",
+    featured: "Presentato Su",
+    endorsed: "Prima Scelta",
+    secure: "Pagamenti Sicuri",
+    secureDesc: "I tuoi dati sono sempre protetti",
+    users: "Oltre 1.000 Utenti Felici",
+    usersDesc: "Unisciti ai nostri clienti soddisfatti",
+    rating: "Valutazione 4.8/5",
+    ratingDesc: "Basato su oltre 500 recensioni"
   },
   bookingForm: {
     title: "Prenota Il Tuo Soggiorno",
