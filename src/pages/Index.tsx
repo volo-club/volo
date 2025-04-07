@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/HeroSection";
@@ -423,7 +422,7 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-neutral-50 text-neutral-900">
+      <section className="py-20 bg-[#D3E4FD] text-neutral-900">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">
