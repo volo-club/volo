@@ -1,14 +1,15 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useLandscape } from "@/hooks/use-landscape";
 
 export default function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
   const isMobile = useIsMobile();
+  const isLandscape = useLandscape();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +37,10 @@ export default function HeroSection() {
   const contentY = scrollY * 0.2;
   
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className={cn(
+      "relative overflow-hidden",
+      isLandscape ? "min-h-screen pt-20 pb-8" : "h-screen"
+    )}>
       {/* Background image with parallax */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -52,33 +56,49 @@ export default function HeroSection() {
       
       {/* Content */}
       <div
-        className="relative h-full flex flex-col justify-center items-center text-center px-4"
+        className={cn(
+          "relative flex flex-col items-center text-center px-4",
+          isLandscape 
+            ? "h-full justify-start py-6" 
+            : "h-full justify-center"
+        )}
         style={{ transform: `translateY(${contentY}px)` }}
       >
-        <div className="max-w-3xl animate-fade-in">
-          <span className="inline-block text-white/90 text-sm md:text-lg mb-4 tracking-wide border-b border-white/30 pb-2">
+        <div className={cn(
+          "max-w-3xl animate-fade-in",
+          isLandscape && "mt-4"
+        )}>
+          <span className="inline-block text-white/90 text-sm md:text-lg mb-2 md:mb-4 tracking-wide border-b border-white/30 pb-2">
             AI-powered trip planning
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Plan <span className="text-[#E5DEFF]">Influencer‑Style</span> Trips<br className="hidden sm:block" />
+          <h1 className={cn(
+            "font-bold text-white mb-3 md:mb-6",
+            isLandscape ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+          )}>
+            Plan <span className="text-[#E5DEFF]">Influencer‑Style</span> Trips
+            {!isLandscape && <br className="hidden sm:block" />}
+            {isLandscape ? " " : <br className="sm:hidden" />}
             on a <span className="text-[#D3E4FD]">Budget</span>
           </h1>
-          <p className="text-base sm:text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className={cn(
+            "text-white/90 mb-4 md:mb-8 max-w-2xl mx-auto",
+            isLandscape ? "text-sm" : "text-base sm:text-lg"
+          )}>
             AI-powered trip planning that makes dream vacations affordable and easy.
           </p>
           <div className={cn(
             "flex items-center justify-center gap-4",
-            isMobile ? "flex-col w-full" : "flex-row"
+            (isMobile || isLandscape) ? "flex-col w-full" : "flex-row"
           )}>
-            <Button asChild size="lg" variant="heroSolid" className={cn(
+            <Button asChild size={isLandscape ? "default" : "lg"} variant="heroSolid" className={cn(
               "transform transition-all duration-300 hover:scale-105 hover:shadow-glow",
-              isMobile ? "w-full" : "min-w-[200px]"
+              (isMobile || isLandscape) ? "w-full" : "min-w-[200px]"
             )}>
               <Link to="/plan-trip">Plan Your Trip</Link>
             </Button>
-            <Button asChild variant="hero" size="lg" className={cn(
+            <Button asChild variant="hero" size={isLandscape ? "default" : "lg"} className={cn(
               "transform transition-all duration-300 hover:scale-105 hover:shadow-glow",
-              isMobile ? "w-full" : "min-w-[200px]"
+              (isMobile || isLandscape) ? "w-full" : "min-w-[200px]"
             )}>
               <Link to="/examples">Watch Demo</Link>
             </Button>
@@ -87,11 +107,17 @@ export default function HeroSection() {
       </div>
       
       {/* Scroll down indicator with enhanced animation */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white">
+      <div className={cn(
+        "absolute left-1/2 transform -translate-x-1/2 text-white",
+        isLandscape ? "bottom-1" : "bottom-10"
+      )}>
         <a 
           href="#how-it-works" 
           onClick={(e) => scrollToSection(e, 'how-it-works')}
-          className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity group"
+          className={cn(
+            "flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity group",
+            isLandscape && "scale-75"
+          )}
         >
           <span className="text-sm mb-2 group-hover:translate-y-1 transition-transform duration-300">Discover More</span>
           <ChevronDown className="h-6 w-6 animate-bounce group-hover:animate-pulse" />
