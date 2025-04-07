@@ -39,10 +39,7 @@ export default function Navbar() {
           <img 
             src={logoImg} 
             alt="VOLO Logo" 
-            className={cn(
-              "transition-transform hover:scale-105 pointer-events-none w-auto",
-              isMobile ? "h-16" : "h-32"
-            )}
+            className="h-32 w-auto transition-transform hover:scale-105 pointer-events-none" 
           />
         </Link>
 
@@ -95,12 +92,8 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           className={cn(
-            "md:hidden transition-all duration-200 select-none focus:outline-none relative z-[60] p-2 rounded-md",
-            isMenuOpen 
-              ? "bg-neutral-100 text-primary-600" 
-              : scrolled 
-                ? "text-neutral-700 hover:bg-neutral-100/80" 
-                : "text-neutral-800 dark:text-white hover:bg-white/20"
+            "md:hidden transition-colors select-none focus:outline-none",
+            scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
           )}
           onClick={toggleMenu}
           aria-label="Toggle menu"
@@ -109,47 +102,42 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Enhanced Mobile Menu */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[64px] bg-white/95 backdrop-blur-md shadow-lg animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto z-[50] border-t border-neutral-100">
-          <div className="container py-8 flex flex-col space-y-0">
-            <div className="space-y-1">
-              <Link
-                to="/how-it-works"
-                className="flex items-center text-neutral-800 hover:text-primary-600 hover:bg-primary-50/50 font-medium py-4 px-4 text-lg rounded-lg transition-all duration-200 select-none focus:outline-none hover:pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                How It Works
-              </Link>
-              <Link
-                to="/explore-trips"
-                className="flex items-center text-neutral-800 hover:text-primary-600 hover:bg-primary-50/50 font-medium py-4 px-4 text-lg rounded-lg transition-all duration-200 select-none focus:outline-none hover:pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Explore Trips
-              </Link>
-              <Link
-                to="/about"
-                className="flex items-center text-neutral-800 hover:text-primary-600 hover:bg-primary-50/50 font-medium py-4 px-4 text-lg rounded-lg transition-all duration-200 select-none focus:outline-none hover:pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-            </div>
-            
-            <div className="h-px w-full bg-neutral-100 my-6"></div>
-            
+        <div className="md:hidden fixed inset-x-0 top-[64px] bg-white/95 backdrop-blur-sm shadow-md animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto">
+          <div className="container py-6 flex flex-col space-y-6">
+            <Link
+              to="/how-it-works"
+              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              How It Works
+            </Link>
+            <Link
+              to="/explore-trips"
+              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Explore Trips
+            </Link>
+            <Link
+              to="/about"
+              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
             <div className="flex flex-col space-y-3 pt-2">
               <Link 
                 to="/login" 
-                className="text-neutral-800 hover:text-primary-600 hover:bg-primary-50/50 font-medium py-4 px-4 text-lg rounded-lg transition-all duration-200 select-none focus:outline-none hover:pl-6"
+                className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg select-none focus:outline-none"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Log In
               </Link>
               <Link 
                 to="/signup" 
-                className="bg-accent-500 text-white hover:bg-accent-600 px-6 py-4 rounded-lg font-medium text-center text-lg mt-2 shadow-md hover:shadow-lg transition-all duration-200 select-none focus:outline-none transform hover:-translate-y-0.5"
+                className="bg-accent-500 text-white hover:bg-accent-600 px-6 py-3 rounded-md font-medium text-center text-lg mt-2 select-none focus:outline-none"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sign Up
