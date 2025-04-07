@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <header className={cn(
       "fixed w-full z-50 transition-all duration-300",
-      scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm py-3" : "bg-transparent py-5"
+      scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm py-3" : "bg-gradient-to-r from-primary-500/70 to-primary-600/70 py-5"
     )}>
       <div className="container flex items-center justify-between">
         {/* Logo */}
@@ -48,19 +48,19 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/how-it-works" className={cn(
             "font-medium transition-colors hover:text-primary-600",
-            scrolled ? "text-neutral-700" : "text-white"
+            scrolled ? "text-neutral-700" : "text-white hover:text-white/80"
           )}>
             How It Works
           </Link>
           <Link to="/explore-trips" className={cn(
             "font-medium transition-colors hover:text-primary-600",
-            scrolled ? "text-neutral-700" : "text-white"
+            scrolled ? "text-neutral-700" : "text-white hover:text-white/80"
           )}>
             Explore Trips
           </Link>
           <Link to="/about" className={cn(
             "font-medium transition-colors hover:text-primary-600",
-            scrolled ? "text-neutral-700" : "text-white"
+            scrolled ? "text-neutral-700" : "text-white hover:text-white/80"
           )}>
             About
           </Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
             to="/login" 
             className={cn(
               "font-medium px-4 py-2 transition-colors hover:text-primary-600",
-              scrolled ? "text-neutral-700" : "text-white"
+              scrolled ? "text-neutral-700" : "text-white hover:text-white/80"
             )}
           >
             Log In
@@ -145,3 +145,4 @@ export default function Navbar() {
     </header>
   );
 }
+
