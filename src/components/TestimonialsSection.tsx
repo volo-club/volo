@@ -131,10 +131,10 @@ export default function TestimonialsSection() {
           <div className="flex justify-between mt-8">
             <button
               onClick={prevTestimonial}
-              className="p-2 rounded-full bg-card hover:bg-muted border border-border transition-colors"
+              className="p-2 rounded-full bg-card hover:bg-muted border border-border transition-colors select-none focus:outline-none"
               disabled={isAnimating}
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-5 w-5 pointer-events-none" />
               <span className="sr-only">Previous testimonial</span>
             </button>
             
@@ -148,7 +148,7 @@ export default function TestimonialsSection() {
                     setActiveIndex(index);
                     setTimeout(() => setIsAnimating(false), 500);
                   }}
-                  className={`w-3 h-3 rounded-full transition-all ${
+                  className={`w-3 h-3 rounded-full transition-all select-none focus:outline-none ${
                     activeIndex === index 
                       ? "bg-accent-600 w-6" 
                       : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
@@ -160,10 +160,10 @@ export default function TestimonialsSection() {
             
             <button
               onClick={nextTestimonial}
-              className="p-2 rounded-full bg-card hover:bg-muted border border-border transition-colors"
+              className="p-2 rounded-full bg-card hover:bg-muted border border-border transition-colors select-none focus:outline-none"
               disabled={isAnimating}
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-5 w-5 pointer-events-none" />
               <span className="sr-only">Next testimonial</span>
             </button>
           </div>
