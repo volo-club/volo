@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -42,21 +44,30 @@ export default function HeroSection() {
         style={{ transform: `translateY(${contentY}px)` }}
       >
         <div className="max-w-3xl animate-fade-in">
-          <span className="inline-block text-white/90 text-lg mb-4 tracking-wide border-b border-white/30 pb-2">
+          <span className="inline-block text-white/90 text-sm md:text-lg mb-4 tracking-wide border-b border-white/30 pb-2">
             AI-powered trip planning
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Plan <span className="text-[#E5DEFF]">Influencer‑Style</span> Trips<br />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Plan <span className="text-[#E5DEFF]">Influencer‑Style</span> Trips<br className="hidden sm:block" />
             on a <span className="text-[#D3E4FD]">Budget</span>
           </h1>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-white/90 mb-8 max-w-2xl mx-auto">
             AI-powered trip planning that makes dream vacations affordable and easy.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" variant="heroSolid" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
+          <div className={cn(
+            "flex items-center justify-center gap-4",
+            isMobile ? "flex-col w-full" : "flex-row"
+          )}>
+            <Button asChild size="lg" variant="heroSolid" className={cn(
+              "transform transition-all duration-300 hover:translate-y-[-2px]",
+              isMobile ? "w-full" : "min-w-[200px]"
+            )}>
               <Link to="/plan-trip">Plan Your Trip</Link>
             </Button>
-            <Button asChild variant="hero" size="lg" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
+            <Button asChild variant="hero" size="lg" className={cn(
+              "transform transition-all duration-300 hover:translate-y-[-2px]",
+              isMobile ? "w-full" : "min-w-[200px]"
+            )}>
               <Link to="/examples">Watch Demo</Link>
             </Button>
           </div>
@@ -66,7 +77,7 @@ export default function HeroSection() {
       {/* Scroll down indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
         <a 
-          href="#features" 
+          href="#how-it-works" 
           className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity"
         >
           <span className="text-sm mb-2">Discover More</span>
@@ -95,4 +106,3 @@ export default function HeroSection() {
     </section>
   );
 }
-

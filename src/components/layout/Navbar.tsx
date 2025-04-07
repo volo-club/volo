@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +39,7 @@ export default function Navbar() {
             scrolled ? "text-primary-600" : "text-neutral-800 dark:text-white"
           )} />
           <span className={cn(
-            "text-2xl font-bold transition-colors",
+            "text-xl md:text-2xl font-bold transition-colors",
             scrolled ? "text-primary-600" : "text-neutral-800 dark:text-white"
           )}>
             VOLO
@@ -105,36 +107,41 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[72px] bg-white shadow-md animate-in slide-in-from-top duration-300">
+        <div className="md:hidden fixed inset-x-0 top-[64px] bg-white/95 backdrop-blur-sm shadow-md animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto">
           <div className="container py-6 flex flex-col space-y-6">
             <Link
               to="/how-it-works"
-              className="text-neutral-700 hover:text-primary-600 font-medium py-2"
+              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3"
               onClick={() => setIsMenuOpen(false)}
             >
               How It Works
             </Link>
             <Link
               to="/explore-trips"
-              className="text-neutral-700 hover:text-primary-600 font-medium py-2"
+              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3"
               onClick={() => setIsMenuOpen(false)}
             >
               Explore Trips
             </Link>
             <Link
               to="/about"
-              className="text-neutral-700 hover:text-primary-600 font-medium py-2"
+              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <div className="flex flex-col space-y-3 pt-2">
-              <Link to="/login" className="text-neutral-700 hover:text-primary-600 font-medium py-2">
+              <Link 
+                to="/login" 
+                className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Log In
               </Link>
               <Link 
                 to="/signup" 
-                className="bg-accent-500 text-white hover:bg-accent-600 px-6 py-3 rounded-md font-medium text-center"
+                className="bg-accent-500 text-white hover:bg-accent-600 px-6 py-3 rounded-md font-medium text-center text-lg mt-2"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Sign Up
               </Link>
@@ -145,4 +152,3 @@ export default function Navbar() {
     </header>
   );
 }
-
