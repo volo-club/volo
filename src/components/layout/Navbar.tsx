@@ -39,7 +39,10 @@ export default function Navbar() {
           <img 
             src={logoImg} 
             alt="VOLO Logo" 
-            className="h-32 w-auto transition-transform hover:scale-105 pointer-events-none" 
+            className={cn(
+              "transition-transform hover:scale-105 pointer-events-none w-auto",
+              isMobile ? "h-16" : "h-32"
+            )}
           />
         </Link>
 
@@ -92,7 +95,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           className={cn(
-            "md:hidden transition-colors select-none focus:outline-none",
+            "md:hidden transition-colors select-none focus:outline-none relative z-[60]",
             scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
           )}
           onClick={toggleMenu}
@@ -104,7 +107,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[64px] bg-white/95 backdrop-blur-sm shadow-md animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto">
+        <div className="md:hidden fixed inset-x-0 top-[64px] bg-white/95 backdrop-blur-sm shadow-md animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto z-[50]">
           <div className="container py-6 flex flex-col space-y-6">
             <Link
               to="/how-it-works"
