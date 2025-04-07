@@ -50,7 +50,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-2">
           <ThemeToggle />
           <Button asChild className="btn-primary">
-            <Link to="/booking">{t.nav.bookNow}</Link>
+            <Link to="/booking">{t.nav.book}</Link>
           </Button>
         </div>
 
@@ -85,7 +85,7 @@ export default function Navbar() {
             
             <Button asChild className="w-full btn-primary mt-6">
               <Link to="/booking" onClick={() => setMobileMenuOpen(false)}>
-                {t.nav.bookNow}
+                {t.nav.book}
               </Link>
             </Button>
           </div>

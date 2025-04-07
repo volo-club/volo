@@ -19,15 +19,15 @@ export interface ApartmentProps {
 }
 
 export default function ApartmentCard({ apartment }: { apartment: ApartmentProps }) {
-  const { t, language } = useLanguage();
+  const { t, locale } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
   
   // Use translated name and description if available
-  const translatedName = language !== 'en' && t.apartmentDescriptions[apartment.id]?.name 
+  const translatedName = locale !== 'en' && t.apartmentDescriptions?.[apartment.id]?.name 
     ? t.apartmentDescriptions[apartment.id].name 
     : apartment.name;
     
-  const translatedDescription = language !== 'en' && t.apartmentDescriptions[apartment.id]?.description 
+  const translatedDescription = locale !== 'en' && t.apartmentDescriptions?.[apartment.id]?.description 
     ? t.apartmentDescriptions[apartment.id].description 
     : apartment.description;
   
