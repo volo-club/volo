@@ -46,8 +46,8 @@ export default function HeroSection() {
             AI-powered trip planning
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Plan <span className="text-accent-500">Influencer‑Style</span> Trips<br />
-            on a <span className="text-primary-400">Budget</span>
+            Plan <span className="text-[#E5DEFF]">Influencer‑Style</span> Trips<br />
+            on a <span className="text-[#D3E4FD]">Budget</span>
           </h1>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
             AI-powered trip planning that makes dream vacations affordable and easy.
@@ -57,7 +57,7 @@ export default function HeroSection() {
               <Link to="/plan-trip">Plan Your Trip</Link>
             </Button>
             <Button asChild variant="hero" size="lg" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
-              <Link to="/examples">See Examples</Link>
+              <Link to="/examples">Watch Demo</Link>
             </Button>
           </div>
         </div>
@@ -95,3 +95,4 @@ export default function HeroSection() {
     </section>
   );
 }
+
