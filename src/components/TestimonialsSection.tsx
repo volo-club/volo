@@ -112,7 +112,7 @@ export default function TestimonialsSection() {
                         [...Array(5)].map((_, i) => (
                           <Star 
                             key={i} 
-                            className="h-4 w-4 fill-primary text-primary" 
+                            className="h-4 w-4 fill-accent-500 text-accent-500" 
                           />
                         ))
                       ) : (
@@ -120,7 +120,7 @@ export default function TestimonialsSection() {
                         [...Array(5)].map((_, i) => (
                           <Star 
                             key={i} 
-                            className={`h-4 w-4 ${i < 4 ? "fill-primary text-primary" : i === 4 ? "fill-primary text-primary opacity-50" : "text-muted-foreground"}`} 
+                            className={`h-4 w-4 ${i < 4 ? "fill-accent-500 text-accent-500" : i === 4 ? "fill-accent-500 text-accent-500 opacity-50" : "text-muted-foreground"}`} 
                           />
                         ))
                       )}
