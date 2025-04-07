@@ -315,6 +315,16 @@ export default function Index() {
               </Card>
             </div>
           )}
+
+          <div className="flex justify-center mt-10">
+            <Button 
+              variant="outline" 
+              className="text-primary-600 border-primary-600 hover:bg-primary-50"
+            >
+              Discover More Trips
+              <ArrowRight size={16} className="ml-2" />
+            </Button>
+          </div>
         </div>
       </section>
 
