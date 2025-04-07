@@ -3,7 +3,7 @@ import React from "react";
 import Layout from "@/components/layout/Layout";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Droplets, Activity, Wifi, Coffee, Utensils, PanelTop, Wind, Shower } from "lucide-react";
+import { Heart, Droplets, Activity, Wifi, Coffee, Utensils, PanelTop, Wind, Bath } from "lucide-react";
 
 export default function Amenities() {
   // Group amenities by category
@@ -32,7 +32,7 @@ export default function Amenities() {
       items: [
         { icon: <Wind className="h-5 w-5" />, name: "Climate control", description: "Individual AC and heating systems" },
         { icon: <Utensils className="h-5 w-5" />, name: "Fully equipped kitchen", description: "Modern appliances and cookware" },
-        { icon: <Shower className="h-5 w-5" />, name: "Luxury bathrooms", description: "Rain showers and premium amenities" }
+        { icon: <Bath className="h-5 w-5" />, name: "Luxury bathrooms", description: "Rain showers and premium amenities" }
       ]
     }
   ];
