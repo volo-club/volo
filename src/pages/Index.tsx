@@ -1,66 +1,15 @@
-
 import Layout from "@/components/layout/Layout";
+import HeroSection from "@/components/HeroSection";
 import { ArrowRight, MapPin, Zap, Clock, ShieldCheck } from "lucide-react";
 
 export default function Index() {
   return (
     <Layout>
-      {/* Hero Section - 100vh with a spacious design */}
-      <section className="pt-24 md:pt-32 pb-16 md:pb-24">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 max-w-xl">
-              <span className="inline-block text-primary-600 font-semibold text-sm md:text-base bg-primary-50 px-4 py-1 rounded-full">
-                AI-Powered Trip Planning
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold !leading-tight animate-fade-in">
-                Travel Like an<br />
-                <span className="text-primary-600">Influencer</span>,<br />
-                Budget Like a Pro
-              </h1>
-              <p className="text-lg text-neutral-600 animate-fade-in animate-delay-100">
-                VOLO creates personalized travel itineraries that look Instagram-worthy
-                while respecting your budget constraints.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in animate-delay-200">
-                <button className="btn btn-primary">
-                  Plan Your Trip
-                  <ArrowRight size={18} className="ml-2" />
-                </button>
-                <button className="btn btn-outline">Learn More</button>
-              </div>
-
-              <div className="flex items-center space-x-4 text-sm text-neutral-500 animate-fade-in animate-delay-300">
-                <span className="flex items-center">
-                  <ShieldCheck size={16} className="mr-1 text-primary-500" />
-                  Free trial
-                </span>
-                <span className="flex items-center">
-                  <Clock size={16} className="mr-1 text-primary-500" />
-                  2-min setup
-                </span>
-                <span className="flex items-center">
-                  <Zap size={16} className="mr-1 text-primary-500" />
-                  AI-powered
-                </span>
-              </div>
-            </div>
-
-            {/* Placeholder for hero image */}
-            <div className="relative h-96 md:h-[500px] rounded-xl overflow-hidden shadow-card animate-fade-in animate-delay-200">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-primary-300 flex items-center justify-center text-primary-800 text-lg font-medium">
-                Hero Image Placeholder
-                <br />
-                (Travel Destination)
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <HeroSection />
 
       {/* Feature Cards Section */}
-      <section className="py-16 bg-neutral-50">
+      <section id="features" className="py-16 bg-neutral-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

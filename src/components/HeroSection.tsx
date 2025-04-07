@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HeroSection() {
-  const { t } = useLanguage();
   const [scrollY, setScrollY] = useState(0);
   
   useEffect(() => {
@@ -45,20 +43,21 @@ export default function HeroSection() {
       >
         <div className="max-w-3xl animate-fade-in">
           <span className="inline-block text-white/90 text-lg mb-4 tracking-wide border-b border-white/30 pb-2">
-            {t.hero.subtitle}
+            AI-powered trip planning
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            {t.hero.title}
+            Plan <span className="text-accent-500">Influencer‑Style</span> Trips<br />
+            on a <span className="text-primary-400">Budget</span>
           </h1>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            {t.hero.description}
+            AI-powered trip planning that makes dream vacations affordable and easy.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" variant="heroSolid" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
-              <Link to="/booking">{t.hero.bookStay}</Link>
+              <Link to="/plan-trip">Plan Your Trip</Link>
             </Button>
             <Button asChild variant="hero" size="lg" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
-              <Link to="/apartments">{t.hero.exploreApartments}</Link>
+              <Link to="/examples">See Examples</Link>
             </Button>
           </div>
         </div>
@@ -67,10 +66,10 @@ export default function HeroSection() {
       {/* Scroll down indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
         <a 
-          href="#welcome" 
+          href="#features" 
           className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity"
         >
-          <span className="text-sm mb-2">{t.hero.scrollDown}</span>
+          <span className="text-sm mb-2">Discover More</span>
           <ChevronDown className="h-6 w-6" />
         </a>
       </div>

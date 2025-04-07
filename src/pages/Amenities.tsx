@@ -1,137 +1,89 @@
 
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Spa, Dumbbell, Pool, Yoga, Utensils, Wine, Coffee, Clock, Car, Plane, Car as CarIcon, MapPin, Waves, Users, Music, BookOpen } from "lucide-react";
+import React from "react";
+import Layout from "@/components/layout/Layout";
+import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
+import { Heart, Droplets, Activity, Wifi, Coffee, Utensils, PanelTop, Wind, Shower } from "lucide-react";
 
 export default function Amenities() {
-  const { t } = useLanguage();
-  
-  useEffect(() => {
-    // Scroll to top when component mounts
-    window.scrollTo(0, 0);
-  }, []);
-  
-  // Helper function to get the appropriate icon for each amenity
-  const getIcon = (categoryName: string, index: number) => {
-    const icons = {
-      wellness: [<Spa key={0} />, <Dumbbell key={1} />, <Pool key={2} />, <Yoga key={3} />],
-      dining: [<Utensils key={0} />, <Coffee key={1} />, <Wine key={2} />, <Clock key={3} />],
-      services: [<Clock key={0} />, <Plane key={1} />, <CarIcon key={2} />, <MapPin key={3} />],
-      entertainment: [<Waves key={0} />, <Users key={1} />, <Music key={2} />, <BookOpen key={3} />]
-    };
-    
-    return icons[categoryName as keyof typeof icons]?.[index] || <Coffee />;
-  };
-  
+  // Group amenities by category
+  const amenitiesGroups = [
+    {
+      title: "Wellness",
+      description: "Relax and rejuvenate during your stay",
+      items: [
+        { icon: <Heart className="h-5 w-5" />, name: "Spa services", description: "Professional massage and treatments" },
+        { icon: <Droplets className="h-5 w-5" />, name: "Pool access", description: "Heated infinity pool with sea view" },
+        { icon: <Activity className="h-5 w-5" />, name: "Yoga classes", description: "Daily morning sessions on the terrace" }
+      ]
+    },
+    {
+      title: "Connectivity",
+      description: "Stay connected with modern amenities",
+      items: [
+        { icon: <Wifi className="h-5 w-5" />, name: "High-speed WiFi", description: "Fiber optic connection throughout" },
+        { icon: <PanelTop className="h-5 w-5" />, name: "Smart TV", description: "55\" 4K display with streaming services" },
+        { icon: <Coffee className="h-5 w-5" />, name: "Work space", description: "Ergonomic desk setup in each apartment" }
+      ]
+    },
+    {
+      title: "Comfort",
+      description: "Premium comforts for a luxurious stay",
+      items: [
+        { icon: <Wind className="h-5 w-5" />, name: "Climate control", description: "Individual AC and heating systems" },
+        { icon: <Utensils className="h-5 w-5" />, name: "Fully equipped kitchen", description: "Modern appliances and cookware" },
+        { icon: <Shower className="h-5 w-5" />, name: "Luxury bathrooms", description: "Rain showers and premium amenities" }
+      ]
+    }
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background">
-          <div className="container relative z-10 pt-20">
-            <div className="text-center max-w-3xl mx-auto">
-              <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                MareSereno
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
-                {t.amenitiesPage.title}
-              </h1>
-              <p className="text-muted-foreground">
-                {t.amenitiesPage.subtitle}
-              </p>
-            </div>
-          </div>
-          
-          {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
-            <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
-            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
-          </div>
-        </section>
-        
-        {/* Description Section */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-lg text-muted-foreground">
-                {t.amenitiesPage.description}
-              </p>
-            </div>
-          </div>
-        </section>
-        
-        {/* Categories Sections */}
-        {Object.keys(t.amenitiesPage.categories).map((category, categoryIndex) => {
-          const categoryData = t.amenitiesPage.categories[category as keyof typeof t.amenitiesPage.categories];
-          const isEven = categoryIndex % 2 === 0;
-          
-          return (
-            <section key={category} className={`py-16 ${isEven ? 'bg-card' : ''}`}>
-              <div className="container">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                  <h2 className="text-3xl font-bold mb-4">
-                    {categoryData.title}
-                  </h2>
-                  <p className="text-muted-foreground">
-                    {categoryData.description}
-                  </p>
+    <Layout>
+      <div className="container max-w-5xl py-16 md:py-24">
+        <div className="text-center mb-16">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Premium Amenities
+          </h1>
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            Enjoy a comprehensive range of luxury amenities designed to enhance your stay
+            and provide unmatched comfort and convenience.
+          </p>
+        </div>
+
+        <div className="space-y-16">
+          {amenitiesGroups.map((group, groupIdx) => (
+            <div key={group.title} className="group">
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-2xl font-bold mb-2">{group.title}</h2>
+                  <p className="text-neutral-600">{group.description}</p>
                 </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {categoryData.items.map((item, index) => (
-                    <div 
-                      key={index} 
-                      className="glass-card p-6 rounded-xl flex flex-col items-center text-center animate-fade-in"
-                      style={{ animationDelay: `${(index + 1) * 100}ms` }}
-                    >
-                      <div className="mb-4 p-3 rounded-full bg-primary/10 text-primary">
-                        {getIcon(category, index)}
-                      </div>
-                      <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.description}</p>
-                    </div>
-                  ))}
-                </div>
+                <Badge variant="outline" className="self-start md:self-auto mt-2 md:mt-0">
+                  {group.items.length} amenities
+                </Badge>
               </div>
-            </section>
-          );
-        })}
-        
-        {/* Gallery Section */}
-        <section className="py-16">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">
-                {t.gallery.title}
-              </h2>
-              <p className="text-muted-foreground">
-                {t.gallery.subtitle}
-              </p>
+              
+              <div className="grid md:grid-cols-3 gap-8">
+                {group.items.map((item, idx) => (
+                  <div key={item.name} className="bg-white rounded-xl shadow-soft p-6 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="text-primary-500">
+                        {item.icon}
+                      </div>
+                      <h3 className="font-semibold">{item.name}</h3>
+                    </div>
+                    <p className="text-neutral-600 text-sm">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+              
+              {groupIdx < amenitiesGroups.length - 1 && (
+                <Separator className="mt-16" />
+              )}
             </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {Array.from({ length: 8 }).map((_, index) => (
-                <div 
-                  key={index} 
-                  className="aspect-square rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105"
-                >
-                  <img 
-                    src={`https://images.unsplash.com/photo-${1550000000000 + index * 100000}?w=400&h=400&fit=crop`}
-                    alt={`Amenity ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
-      
-      <Footer />
-    </div>
+          ))}
+        </div>
+      </div>
+    </Layout>
   );
 }
