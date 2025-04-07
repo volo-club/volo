@@ -95,8 +95,12 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           className={cn(
-            "md:hidden transition-colors select-none focus:outline-none relative z-[60]",
-            scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
+            "md:hidden transition-all duration-200 select-none focus:outline-none relative z-[60] p-2 rounded-md",
+            isMenuOpen 
+              ? "bg-neutral-100 text-primary-600" 
+              : scrolled 
+                ? "text-neutral-700 hover:bg-neutral-100/80" 
+                : "text-neutral-800 dark:text-white hover:bg-white/20"
           )}
           onClick={toggleMenu}
           aria-label="Toggle menu"
@@ -107,40 +111,40 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[64px] bg-white/95 backdrop-blur-sm shadow-md animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto z-[50]">
-          <div className="container py-6 flex flex-col space-y-6">
+        <div className="md:hidden fixed inset-x-0 top-[64px] bg-white/95 backdrop-blur-md shadow-lg animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto z-[50] border-t border-neutral-200">
+          <div className="container py-8 flex flex-col space-y-7">
             <Link
               to="/how-it-works"
-              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
+              className="text-neutral-800 hover:text-primary-600 font-medium py-3 text-xl border-b border-neutral-100 pb-4 select-none focus:outline-none transition-all duration-200 hover:pl-2"
               onClick={() => setIsMenuOpen(false)}
             >
               How It Works
             </Link>
             <Link
               to="/explore-trips"
-              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
+              className="text-neutral-800 hover:text-primary-600 font-medium py-3 text-xl border-b border-neutral-100 pb-4 select-none focus:outline-none transition-all duration-200 hover:pl-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Explore Trips
             </Link>
             <Link
               to="/about"
-              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
+              className="text-neutral-800 hover:text-primary-600 font-medium py-3 text-xl border-b border-neutral-100 pb-4 select-none focus:outline-none transition-all duration-200 hover:pl-2"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
-            <div className="flex flex-col space-y-3 pt-2">
+            <div className="flex flex-col space-y-4 pt-3">
               <Link 
                 to="/login" 
-                className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg select-none focus:outline-none"
+                className="text-neutral-800 hover:text-primary-600 font-medium py-3 text-xl select-none focus:outline-none transition-all duration-200 hover:pl-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Log In
               </Link>
               <Link 
                 to="/signup" 
-                className="bg-accent-500 text-white hover:bg-accent-600 px-6 py-3 rounded-md font-medium text-center text-lg mt-2 select-none focus:outline-none"
+                className="bg-accent-500 text-white hover:bg-accent-600 px-6 py-4 rounded-md font-medium text-center text-xl mt-2 select-none focus:outline-none transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sign Up
