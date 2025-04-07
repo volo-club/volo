@@ -16,6 +16,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [locale, setLocale] = useState('en');
   
+  // Use the selected locale to determine which translation object to use
   const t = locale === 'it' ? it : en;
   
   return (

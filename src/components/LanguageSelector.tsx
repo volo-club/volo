@@ -22,7 +22,7 @@ const languages: Language[] = [
 ];
 
 export default function LanguageSelector() {
-  const { language, setLanguage } = useLanguage();
+  const { locale, setLocale } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   // This effect is to ensure hydration doesn't cause issues
@@ -31,7 +31,7 @@ export default function LanguageSelector() {
   }, []);
 
   const handleLanguageChange = (value: string) => {
-    setLanguage(value);
+    setLocale(value);
   };
 
   if (!mounted) {
@@ -40,7 +40,7 @@ export default function LanguageSelector() {
 
   return (
     <div className="flex items-center">
-      <Select value={language} onValueChange={handleLanguageChange}>
+      <Select value={locale} onValueChange={handleLanguageChange}>
         <SelectTrigger 
           className="w-[80px] h-10 border-none bg-transparent focus:ring-0" 
           aria-label="Select Language"
