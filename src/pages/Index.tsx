@@ -1,4 +1,14 @@
 
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import HeroSection from "@/components/HeroSection";
+
+const Index = () => {
+  return (
+    <main className="min-h-screen">
+      <HeroSection />
+      
       {/* CTA Section */}
       <section className="py-20 bg-neutral-100">
         <div className="container">
@@ -24,3 +34,8 @@
           </div>
         </div>
       </section>
+    </main>
+  );
+};
+
+export default Index;
