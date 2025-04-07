@@ -19,6 +19,18 @@ export default function HeroSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   
+  // Handle smooth scrolling for anchor links
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+  
   // Calculate parallax effect
   const backgroundY = scrollY * 0.5;
   const contentY = scrollY * 0.2;
@@ -59,13 +71,13 @@ export default function HeroSection() {
             isMobile ? "flex-col w-full" : "flex-row"
           )}>
             <Button asChild size="lg" variant="heroSolid" className={cn(
-              "transform transition-all duration-300 hover:translate-y-[-2px]",
+              "transform transition-all duration-300 hover:scale-105 hover:shadow-glow",
               isMobile ? "w-full" : "min-w-[200px]"
             )}>
               <Link to="/plan-trip">Plan Your Trip</Link>
             </Button>
             <Button asChild variant="hero" size="lg" className={cn(
-              "transform transition-all duration-300 hover:translate-y-[-2px]",
+              "transform transition-all duration-300 hover:scale-105 hover:shadow-glow",
               isMobile ? "w-full" : "min-w-[200px]"
             )}>
               <Link to="/examples">Watch Demo</Link>
@@ -74,14 +86,15 @@ export default function HeroSection() {
         </div>
       </div>
       
-      {/* Scroll down indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+      {/* Scroll down indicator with enhanced animation */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white">
         <a 
           href="#how-it-works" 
-          className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity"
+          onClick={(e) => scrollToSection(e, 'how-it-works')}
+          className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity group"
         >
-          <span className="text-sm mb-2">Discover More</span>
-          <ChevronDown className="h-6 w-6" />
+          <span className="text-sm mb-2 group-hover:translate-y-1 transition-transform duration-300">Discover More</span>
+          <ChevronDown className="h-6 w-6 animate-bounce group-hover:animate-pulse" />
         </a>
       </div>
       
