@@ -422,21 +422,26 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-50">
+      <section className="py-20 bg-primary-700 text-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">
               Ready to Plan Your Next Adventure?
             </h2>
-            <p className="text-lg text-neutral-600">
+            <p className="text-lg text-white/90">
               Join thousands of travelers who've already created their perfect trips with VOLO.
               Your influencer-worthy journey awaits!
             </p>
             <div className="pt-4">
-              <button className="btn btn-primary">
+              <Button 
+                variant="heroSolid" 
+                size="lg" 
+                className="text-base font-semibold px-8 py-6 h-auto"
+              >
                 Start Planning for Free
-                <ArrowRight size={16} className="ml-2" />
-              </button>
+                <ArrowRight size={16} />
+              </Button>
+              <p className="text-sm text-white/80 mt-3">Takes less than 2 minutes to get your first itinerary!</p>
             </div>
           </div>
         </div>
