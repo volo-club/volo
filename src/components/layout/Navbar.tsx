@@ -1,9 +1,9 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
+import logoImage from "@/assets/logo.png";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,16 +34,14 @@ export default function Navbar() {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <Globe className={cn(
-            "h-6 w-6 transition-colors",
-            scrolled ? "text-primary-600" : "text-neutral-800 dark:text-white"
-          )} />
-          <span className={cn(
-            "text-xl md:text-2xl font-bold transition-colors",
-            scrolled ? "text-primary-600" : "text-neutral-800 dark:text-white"
-          )}>
-            VOLO
-          </span>
+          <img 
+            src={logoImage} 
+            alt="VOLO Logo" 
+            className={cn(
+              "h-8 w-auto transition-all", 
+              scrolled ? "opacity-100" : "opacity-100"
+            )} 
+          />
         </Link>
 
         {/* Desktop Navigation */}
