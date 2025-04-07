@@ -19,7 +19,7 @@ const testimonials: Testimonial[] = [
     name: "Sophia Martinez",
     location: "New York, USA",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces",
-    content: "My family and I had the most wonderful stay at MareSereno. The apartment was immaculate, with breathtaking sea views. The staff went above and beyond to make our vacation special.",
+    content: "VOLO transformed my Bali vacation planning! I got a perfectly curated itinerary with hidden gems and local experiences I would have never found on my own. The AI suggested activities within my budget and even found amazing accommodation deals.",
     rating: 5
   },
   {
@@ -27,16 +27,16 @@ const testimonials: Testimonial[] = [
     name: "Marco Rossi",
     location: "Rome, Italy",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces",
-    content: "Absolutely perfect location, steps away from the beach. The apartment had everything we needed and more. The modern amenities combined with the traditional coastal charm created a truly magical experience.",
-    rating: 5
+    content: "As someone who hates planning trips, VOLO was a game-changer for my Thailand adventure. The AI understood exactly what I was looking for and created an influencer-worthy itinerary that didn't break the bank. The restaurant recommendations were particularly excellent!",
+    rating: 4.5
   },
   {
     id: 3,
     name: "Emma Johnson",
     location: "London, UK",
     avatar: "https://images.unsplash.com/photo-1569913486515-b74bf7751574?w=150&h=150&fit=crop&crop=faces",
-    content: "We spent a wonderful week at this beachfront paradise. The sunrise views from our terrace were worth the trip alone. Exceptionally clean and beautifully designed spaces.",
-    rating: 4
+    content: "I used VOLO to plan a surprise anniversary trip to Greece, and it exceeded all expectations. The platform found the perfect balance between popular attractions and off-the-beaten-path experiences. My Instagram feed has never looked better, and we stayed well under budget!",
+    rating: 5
   },
 ];
 
@@ -107,12 +107,23 @@ export default function TestimonialsSection() {
                       </AvatarFallback>
                     </Avatar>
                     <div className="flex mb-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`h-4 w-4 ${i < testimonial.rating ? "fill-primary text-primary" : "text-muted-foreground"}`} 
-                        />
-                      ))}
+                      {testimonial.rating === 5 ? (
+                        // Full 5 stars
+                        [...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className="h-4 w-4 fill-primary text-primary" 
+                          />
+                        ))
+                      ) : (
+                        // 4.5 stars
+                        [...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className={`h-4 w-4 ${i < 4 ? "fill-primary text-primary" : i === 4 ? "fill-primary text-primary opacity-50" : "text-muted-foreground"}`} 
+                          />
+                        ))
+                      )}
                     </div>
                     <h4 className="text-lg font-semibold text-center md:text-left">{testimonial.name}</h4>
                     <p className="text-sm text-muted-foreground text-center md:text-left">{testimonial.location}</p>
