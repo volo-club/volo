@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star, UserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -111,7 +110,9 @@ export default function TestimonialsSection() {
                       {[...Array(5)].map((_, i) => (
                         <Star 
                           key={i} 
-                          className={`h-4 w-4 ${i < testimonial.rating ? "fill-primary text-primary" : "text-muted-foreground"}`} 
+                          className={`h-4 w-4 ${i < testimonial.rating ? "fill-primary-500 text-primary-500" : "text-muted-foreground"}`}
+                          fill={i < testimonial.rating ? "currentColor" : "none"}
+                          strokeWidth={i < testimonial.rating ? 0 : 2}
                         />
                       ))}
                     </div>
@@ -151,7 +152,7 @@ export default function TestimonialsSection() {
                   }}
                   className={`w-3 h-3 rounded-full transition-all ${
                     activeIndex === index 
-                      ? "bg-primary w-6" 
+                      ? "bg-primary-700 w-6" 
                       : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
