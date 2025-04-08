@@ -46,20 +46,20 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/how-it-works" className={cn(
-            "font-medium transition-colors hover:text-primary-600 select-none focus:outline-none",
-            scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
+            "font-bold transition-colors hover:text-primary-200 select-none focus:outline-none text-base",
+            scrolled ? "text-neutral-900" : "text-white drop-shadow-lg"
           )}>
             How It Works
           </Link>
           <Link to="/explore-trips" className={cn(
-            "font-medium transition-colors hover:text-primary-600 select-none focus:outline-none",
-            scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
+            "font-bold transition-colors hover:text-primary-200 select-none focus:outline-none text-base",
+            scrolled ? "text-neutral-900" : "text-white drop-shadow-lg"
           )}>
             Explore Trips
           </Link>
           <Link to="/about" className={cn(
-            "font-medium transition-colors hover:text-primary-600 select-none focus:outline-none",
-            scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
+            "font-bold transition-colors hover:text-primary-200 select-none focus:outline-none text-base",
+            scrolled ? "text-neutral-900" : "text-white drop-shadow-lg"
           )}>
             About
           </Link>
@@ -70,8 +70,8 @@ export default function Navbar() {
           <Link 
             to="/login" 
             className={cn(
-              "font-medium px-4 py-2 transition-colors hover:text-primary-600 select-none focus:outline-none",
-              scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
+              "font-bold px-4 py-2 transition-colors hover:text-primary-200 select-none focus:outline-none text-base",
+              scrolled ? "text-neutral-900" : "text-white drop-shadow-lg"
             )}
           >
             Log In
@@ -79,10 +79,10 @@ export default function Navbar() {
           <Link 
             to="/signup" 
             className={cn(
-              "px-6 py-2 rounded-md font-medium transition-all select-none focus:outline-none",
+              "px-6 py-2 rounded-md font-bold transition-all select-none focus:outline-none text-base",
               scrolled 
                 ? "bg-accent-500 text-white hover:bg-accent-600" 
-                : "bg-neutral-800 text-white hover:bg-neutral-900 dark:bg-white/20 dark:text-white dark:backdrop-blur-sm dark:border dark:border-white/30 dark:hover:bg-white/30"
+                : "bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30"
             )}
           >
             Sign Up
@@ -93,7 +93,7 @@ export default function Navbar() {
         <button
           className={cn(
             "md:hidden transition-colors select-none focus:outline-none",
-            scrolled ? "text-neutral-700" : "text-neutral-800 dark:text-white"
+            scrolled ? "text-neutral-700" : "text-white"
           )}
           onClick={toggleMenu}
           aria-label="Toggle menu"
@@ -108,21 +108,21 @@ export default function Navbar() {
           <div className="container py-6 flex flex-col space-y-6">
             <Link
               to="/how-it-works"
-              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
+              className="text-neutral-900 hover:text-primary-600 font-bold py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
               onClick={() => setIsMenuOpen(false)}
             >
               How It Works
             </Link>
             <Link
               to="/explore-trips"
-              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
+              className="text-neutral-900 hover:text-primary-600 font-bold py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
               onClick={() => setIsMenuOpen(false)}
             >
               Explore Trips
             </Link>
             <Link
               to="/about"
-              className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
+              className="text-neutral-900 hover:text-primary-600 font-bold py-3 text-lg border-b border-neutral-100 pb-3 select-none focus:outline-none"
               onClick={() => setIsMenuOpen(false)}
             >
               About
@@ -130,14 +130,14 @@ export default function Navbar() {
             <div className="flex flex-col space-y-3 pt-2">
               <Link 
                 to="/login" 
-                className="text-neutral-700 hover:text-primary-600 font-medium py-3 text-lg select-none focus:outline-none"
+                className="text-neutral-900 hover:text-primary-600 font-bold py-3 text-lg select-none focus:outline-none"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Log In
               </Link>
               <Link 
                 to="/signup" 
-                className="bg-accent-500 text-white hover:bg-accent-600 px-6 py-3 rounded-md font-medium text-center text-lg mt-2 select-none focus:outline-none"
+                className="bg-accent-500 text-white hover:bg-accent-600 px-6 py-3 rounded-md font-bold text-center text-lg mt-2 select-none focus:outline-none"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sign Up
