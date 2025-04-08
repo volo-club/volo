@@ -25,8 +25,32 @@ export default function Navbar() {
   }, [scrolled]);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
+
+  // Close menu when clicking outside or on escape key
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isMenuOpen && !target.closest('.mobile-menu-container') && !target.closest('.mobile-menu-button')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (isMenuOpen && event.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEscape);
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className={cn(
@@ -92,11 +116,14 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           className={cn(
-            "md:hidden transition-colors select-none focus:outline-none",
-            scrolled ? "text-neutral-700" : "text-white"
+            "md:hidden transition-colors select-none focus:outline-none mobile-menu-button z-50",
+            isMenuOpen 
+              ? "text-neutral-900" 
+              : scrolled ? "text-neutral-700" : "text-white"
           )}
           onClick={toggleMenu}
-          aria-label="Toggle menu"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -104,7 +131,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[64px] bg-white/95 backdrop-blur-sm shadow-md animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto">
+        <div className="md:hidden fixed inset-x-0 top-[64px] bg-white/95 backdrop-blur-sm shadow-md animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto mobile-menu-container">
           <div className="container py-6 flex flex-col space-y-6">
             <Link
               to="/how-it-works"
